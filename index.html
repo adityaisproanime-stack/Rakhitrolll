@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>For You 💗</title>
+<title>Raksha Bandhan ❤️</title>
 
 <style>
 * {
@@ -14,373 +13,514 @@
 body {
     margin: 0;
     min-height: 100vh;
-    overflow: hidden;
-    font-family: "Comic Sans MS", cursive, sans-serif;
-    background: linear-gradient(135deg, #ffd6ec, #dff5ff, #fff1b8);
+    font-family: "Trebuchet MS", sans-serif;
+    background: linear-gradient(135deg, #ffd6e7, #fff0c9, #d9f5ff);
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    overflow: hidden;
 }
 
 .container {
     width: 92%;
     max-width: 600px;
-    padding: 25px;
-    position: relative;
-    z-index: 10;
-}
-
-.card {
+    min-height: 650px;
     background: rgba(255,255,255,0.88);
     border-radius: 30px;
     padding: 30px 20px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
-    border: 4px dashed #ff8fc7;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
 }
 
 h1 {
-    color: #ff4f9a;
-    font-size: 32px;
-    margin-bottom: 10px;
+    color: #ff4f81;
+    font-size: 2.3rem;
+    margin: 10px 0;
+}
+
+h2 {
+    color: #6c4ab6;
 }
 
 p {
-    color: #555;
-    font-size: 18px;
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: #444;
 }
+
+/* Animals */
+
+.animals {
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 35px;
+    margin: 10px;
+}
+
+.animal {
+    font-size: 90px;
+    display: inline-block;
+    animation: dance 0.7s infinite alternate ease-in-out;
+}
+
+.teddy {
+    animation-delay: .25s;
+}
+
+@keyframes dance {
+    from {
+        transform: rotate(-12deg) translateY(5px);
+    }
+    to {
+        transform: rotate(12deg) translateY(-15px);
+    }
+}
+
+/* Buttons */
 
 button {
     border: none;
-    padding: 15px 25px;
-    border-radius: 30px;
-    font-size: 18px;
-    font-family: inherit;
+    padding: 15px 28px;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
-    margin: 10px;
-    transition: 0.2s;
+    transition: .2s;
+    box-shadow: 0 6px 15px rgba(0,0,0,.15);
 }
 
-#tryBtn {
-    background: #ff69a8;
+.start {
+    background: #ff5d8f;
     color: white;
-    box-shadow: 0 5px 15px rgba(255,80,150,0.35);
 }
 
-#tryBtn:hover {
-    transform: scale(1.08);
+.yes {
+    background: #67c587;
+    color: white;
 }
 
-#yesBtn {
-    background: #7ee8a6;
-    color: #174d2b;
+.no {
+    background: #ff6b6b;
+    color: white;
+    position: absolute;
 }
 
 .hidden {
     display: none;
 }
 
-/* Crazy animals */
-.animal {
-    position: fixed;
-    font-size: 45px;
-    animation: bounce 1.5s infinite alternate;
-    z-index: 1;
+.question {
+    min-height: 100px;
 }
 
-@keyframes bounce {
-    from {
-        transform: translateY(0) rotate(-8deg);
-    }
-    to {
-        transform: translateY(-25px) rotate(8deg);
-    }
-}
-
-/* Teddy */
-.teddy {
-    font-size: 85px;
-    animation: teddyDance 0.7s infinite alternate;
-}
-
-@keyframes teddyDance {
-    from {
-        transform: rotate(-10deg) scale(1);
-    }
-    to {
-        transform: rotate(10deg) scale(1.12);
-    }
+.counter {
+    color: #ff4f81;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 /* Hearts */
+
 .heart {
     position: fixed;
+    bottom: -30px;
     font-size: 25px;
-    animation: floatUp 4s linear forwards;
+    animation: floatUp 5s linear forwards;
     pointer-events: none;
 }
 
 @keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Final */
+
+.final-message {
+    animation: appear 1.5s ease;
+}
+
+.big-heart {
+    font-size: 80px;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%,100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+}
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    font-size: 25px;
+    animation: fall 4s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+    }
+}
+
+.gift {
+    font-size: 55px;
+    animation: bounce 1s infinite alternate;
+}
+
+@keyframes bounce {
     from {
         transform: translateY(0);
-        opacity: 1;
     }
+
     to {
-        transform: translateY(-100vh);
-        opacity: 0;
+        transform: translateY(-15px);
     }
 }
 
-/* Final message */
-.finalMessage {
-    animation: appear 1.2s ease;
+.small {
+    font-size: .9rem;
+    color: #777;
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: scale(0.5) rotate(-5deg);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1) rotate(0);
-    }
-}
-
-.bigText {
-    font-size: 25px;
-    line-height: 1.5;
-    color: #444;
-}
-
-.signature {
-    color: #ff4f9a;
-    font-size: 22px;
-    font-weight: bold;
+#gameArea {
+    position: relative;
+    height: 150px;
+    margin-top: 20px;
 }
 </style>
 </head>
 
 <body>
 
-<!-- RANDOM ANIMALS -->
-<div class="animal" style="top:5%;left:5%;">🐻</div>
-<div class="animal" style="top:8%;right:7%;animation-delay:.3s;">🐰</div>
-<div class="animal" style="bottom:8%;left:5%;animation-delay:.5s;">🐼</div>
-<div class="animal" style="bottom:10%;right:6%;animation-delay:.8s;">🐸</div>
-<div class="animal" style="top:45%;left:1%;animation-delay:.2s;">🐱</div>
-<div class="animal" style="top:45%;right:1%;animation-delay:.6s;">🐶</div>
-
 <div class="container">
 
-    <!-- FIRST SCREEN -->
-    <div class="card" id="screen1">
+    <!-- START SCREEN -->
 
-        <div class="teddy">🧸</div>
+    <div id="startScreen">
 
-        <h1>HEYYYY YOU 👀</h1>
+        <div class="animals">
+            <div class="animal">🐼</div>
+            <div class="animal teddy">🧸</div>
+        </div>
+
+        <h1>🎀 HAPPY RAKSHA BANDHAN 🎀</h1>
 
         <p>
-            I have something VERY important to tell you...
+            I made something very important for you... 👀
         </p>
 
         <p>
-            But first you have to press the button 😌
+            But unfortunately, you have to survive a tiny challenge first. 😈
         </p>
 
-        <button id="tryBtn" onclick="tryAgain()">
-            Try Again 😈
-        </button>
-
-        <button id="yesBtn" onclick="startChaos()">
-            Fineee 😭
+        <button class="start" onclick="startGame()">
+            Enter at your own risk 😂
         </button>
 
     </div>
 
-    <!-- CHAOS SCREEN -->
-    <div class="card hidden" id="screen2">
 
-        <div style="font-size:65px;">
-            🧸 🐻 🐰 🐼 🐱 🐶
+    <!-- QUESTION SCREEN -->
+
+    <div id="gameScreen" class="hidden">
+
+        <div class="animals">
+            <div class="animal">🐼</div>
+            <div class="animal teddy">🧸</div>
         </div>
 
-        <h1>HAHAHAHA 😂</h1>
+        <div class="counter">
+            Challenge: <span id="count">0</span> / 7
+        </div>
 
-        <p>
-            YOU ACTUALLY PRESSED IT.
+        <h2 id="question">
+            Question loading...
+        </h2>
+
+        <p id="subtext">
+            Choose wisely 😌
         </p>
 
-        <p>
-            Now you are trapped here with me. 😌
+        <div id="gameArea">
+
+            <button class="yes" onclick="clickedButton()">
+                YES 😌
+            </button>
+
+            <button id="movingButton" class="no" onclick="clickedButton()">
+                NO 😭
+            </button>
+
+        </div>
+
+        <p class="small">
+            Warning: The buttons have trust issues. 😂
         </p>
-
-        <p style="font-size:30px;">
-            🐸 🦆 🐵 🐯 🐨 🐷 🐮
-        </p>
-
-        <button onclick="moreChaos()">
-            DON'T PRESS THIS 😇
-        </button>
-
-        <button onclick="showFinal()">
-            Okay... enough 😭
-        </button>
 
     </div>
 
-    <!-- FINAL MESSAGE -->
-    <div class="card hidden finalMessage" id="screen3">
 
-        <div style="font-size:75px;">
-            🧸💗
+    <!-- FINAL SCREEN -->
+
+    <div id="finalScreen" class="hidden final-message">
+
+        <div class="animals">
+            <div class="animal">🐼</div>
+            <div class="animal teddy">🧸</div>
         </div>
 
-        <h1>
-            HAPPY RAKSHA BANDHAN! 🪢💗
-        </h1>
+        <div class="big-heart">❤️</div>
 
-        <p class="bigText">
-            Okay okay... enough nonsense. 😂
+        <h1>YOU SURVIVED! 🎉</h1>
+
+        <div class="gift">🎁</div>
+
+        <h2>Okay okay... enough irritation 😂</h2>
+
+        <p>
+            Behind all the fights, teasing, arguments and nonsense,
+            you're someone I'm genuinely lucky to have in my life. ❤️
         </p>
 
-        <p class="bigText">
-            Behind all these annoying buttons, stupid animals
-            and completely unnecessary chaos...
-            there is actually a cute message. 🥹
+        <p>
+            No matter how much we annoy each other,
+            you'll always have a very special place in my heart.
         </p>
 
-        <p class="bigText">
-            No matter how much we irritate each other,
-            fight over the dumbest things,
-            or annoy each other for absolutely no reason...
-            I'm really lucky to have you. 🫶
+        <h2>
+            HAPPY RAKSHA BANDHAN! 🎀🫶
+        </h2>
+
+        <p>
+            Stay annoying.<br>
+            Stay amazing.<br>
+            And obviously... don't forget my Rakhi gift. 😌😂
         </p>
 
-        <p class="bigText">
-            So keep smiling, keep being your crazy self,
-            and remember that I'll always be there to annoy you. 😌😂
-        </p>
+        <h1>🐼 🧸 🐻 🐰 🐱</h1>
 
-        <p class="bigText">
-            You're stuck with me forever. 😈💗
+        <p>
+            Lots of love ❤️
         </p>
-
-        <p class="signature">
-            Happy Raksha Bandhan! 🪢✨
-        </p>
-
-        <div style="font-size:50px;">
-            🐻 🐰 🐼 🐱 🐶 🐸
-        </div>
 
     </div>
 
 </div>
 
+
 <script>
 
-let tries = 0;
+const questions = [
 
-function tryAgain() {
+    "Are you ready for the most important Raksha Bandhan question ever? 👀",
 
-    tries++;
+    "Do you agree that I'm obviously your favourite sibling? 😌",
 
-    const button = document.getElementById("tryBtn");
+    "Will you admit that I annoy you only because I love you? 😂",
 
-    const messages = [
-        "Try Again 😈",
-        "NOPE 😂",
-        "Againnn 😭",
-        "You thought? 💀",
-        "TRY HARDER 😌",
-        "Almost... NOT 😂",
-        "Again AGAIN AGAIN!!!",
-        "Why are you still trying 😭",
-        "Okay last time... maybe 👀"
-    ];
+    "Will you share your snacks with me without complaining? 🍫",
 
-    button.innerText = messages[Math.min(tries - 1, messages.length - 1)];
+    "Do you promise to tolerate my nonsense for another year? 😭",
 
-    // Make the button jump around
-    const x = Math.random() * 180 - 90;
-    const y = Math.random() * 120 - 60;
+    "If I say I'm the best sibling, will you agree immediately? 😎",
 
-    button.style.transform =
-        `translate(${x}px, ${y}px) rotate(${Math.random()*20-10}deg)`;
+    "FINAL QUESTION... Do you love me even though I'm extremely annoying? ❤️"
 
-    createHeart();
+];
+
+let current = 0;
+
+function startGame() {
+
+    document.getElementById("startScreen").classList.add("hidden");
+
+    document.getElementById("gameScreen").classList.remove("hidden");
+
+    showQuestion();
+
+    createHearts();
 }
 
-function startChaos() {
 
-    document.getElementById("screen1").classList.add("hidden");
-    document.getElementById("screen2").classList.remove("hidden");
+function showQuestion() {
 
-    for(let i = 0; i < 15; i++) {
-        setTimeout(createHeart, i * 150);
+    document.getElementById("question").innerText =
+        questions[current];
+
+    document.getElementById("count").innerText =
+        current;
+
+    moveButton();
+
+}
+
+
+function clickedButton() {
+
+    current++;
+
+    if (current >= 7) {
+
+        document.getElementById("gameScreen")
+            .classList.add("hidden");
+
+        document.getElementById("finalScreen")
+            .classList.remove("hidden");
+
+        createConfetti();
+
+        createHearts();
+
+        return;
+    }
+
+    document.getElementById("count").innerText =
+        current;
+
+    showQuestion();
+
+    // Make it increasingly annoying 😂
+
+    if (current >= 3) {
+        document.getElementById("subtext").innerText =
+            "HAHA! You thought that was the last one? 😈";
+    }
+
+    if (current >= 5) {
+        document.getElementById("subtext").innerText =
+            "Almost there... probably... 👀";
+    }
+
+    if (current === 6) {
+        document.getElementById("subtext").innerText =
+            "ONE MORE! DON'T ESCAPE! 😂";
     }
 }
 
-function moreChaos() {
 
-    const animals = [
-        "🐻","🐰","🐼","🐸","🐵",
-        "🐯","🐨","🐷","🐮","🦊",
-        "🐱","🐶","🦄","🐙","🦆"
-    ];
+function moveButton() {
 
-    for(let i = 0; i < 20; i++) {
+    const button =
+        document.getElementById("movingButton");
 
-        const animal = document.createElement("div");
+    const area =
+        document.getElementById("gameArea");
 
-        animal.className = "animal";
+    const maxX =
+        area.clientWidth - button.offsetWidth;
 
-        animal.innerText =
-            animals[Math.floor(Math.random() * animals.length)];
+    const maxY =
+        area.clientHeight - button.offsetHeight;
 
-        animal.style.left = Math.random() * 90 + "%";
-        animal.style.top = Math.random() * 90 + "%";
+    const x =
+        Math.random() * Math.max(maxX, 10);
 
-        document.body.appendChild(animal);
+    const y =
+        Math.random() * Math.max(maxY, 10);
+
+    button.style.left = x + "px";
+    button.style.top = y + "px";
+}
+
+
+// Make NO button escape when mouse gets close
+
+const movingButton =
+    document.getElementById("movingButton");
+
+movingButton.addEventListener("mouseenter", function() {
+
+    if (current < 6) {
+        moveButton();
+    }
+
+});
+
+
+// Hearts
+
+function createHearts() {
+
+    setInterval(() => {
+
+        const heart =
+            document.createElement("div");
+
+        heart.className = "heart";
+
+        const hearts =
+            ["❤️","💕","💗","💖","💞","💓"];
+
+        heart.innerText =
+            hearts[Math.floor(Math.random() * hearts.length)];
+
+        heart.style.left =
+            Math.random() * 100 + "vw";
+
+        heart.style.animationDuration =
+            (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
 
         setTimeout(() => {
-            animal.remove();
-        }, 5000);
-    }
+            heart.remove();
+        }, 6000);
 
-    alert("I TOLD YOU NOT TO PRESS IT 😭😂");
+    }, 700);
 }
 
-function showFinal() {
 
-    document.getElementById("screen2").classList.add("hidden");
-    document.getElementById("screen3").classList.remove("hidden");
+// Confetti
 
-    for(let i = 0; i < 40; i++) {
-        setTimeout(createHeart, i * 80);
+function createConfetti() {
+
+    const pieces =
+        ["🎉","🎊","✨","❤️","🌸","🎀","🐼","🧸"];
+
+    for (let i = 0; i < 70; i++) {
+
+        const confetti =
+            document.createElement("div");
+
+        confetti.className =
+            "confetti";
+
+        confetti.innerText =
+            pieces[Math.floor(Math.random() * pieces.length)];
+
+        confetti.style.left =
+            Math.random() * 100 + "vw";
+
+        confetti.style.animationDuration =
+            (2 + Math.random() * 4) + "s";
+
+        confetti.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+            confetti.remove();
+        }, 7000);
     }
-}
-
-function createHeart() {
-
-    const heart = document.createElement("div");
-
-    heart.className = "heart";
-
-    const hearts = ["💗","💕","💖","💓","🩷","✨","🌸"];
-
-    heart.innerText =
-        hearts[Math.floor(Math.random() * hearts.length)];
-
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.style.bottom = "-30px";
-
-    document.body.appendChild(heart);
-
-    setTimeout(() => {
-        heart.remove();
-    }, 4000);
 }
 
 </script>
