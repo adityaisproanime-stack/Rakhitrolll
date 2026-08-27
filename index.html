@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For You 💗</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background: linear-gradient(135deg, #ffd6ec, #dff5ff, #fff1b8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container {
+    width: 92%;
+    max-width: 600px;
+    padding: 25px;
+    position: relative;
+    z-index: 10;
+}
+
+.card {
+    background: rgba(255,255,255,0.88);
+    border-radius: 30px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    border: 4px dashed #ff8fc7;
+}
+
+h1 {
+    color: #ff4f9a;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+    font-size: 18px;
+}
+
+button {
+    border: none;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-family: inherit;
+    cursor: pointer;
+    margin: 10px;
+    transition: 0.2s;
+}
+
+#tryBtn {
+    background: #ff69a8;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255,80,150,0.35);
+}
+
+#tryBtn:hover {
+    transform: scale(1.08);
+}
+
+#yesBtn {
+    background: #7ee8a6;
+    color: #174d2b;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Crazy animals */
+.animal {
+    position: fixed;
+    font-size: 45px;
+    animation: bounce 1.5s infinite alternate;
+    z-index: 1;
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0) rotate(-8deg);
+    }
+    to {
+        transform: translateY(-25px) rotate(8deg);
+    }
+}
+
+/* Teddy */
+.teddy {
+    font-size: 85px;
+    animation: teddyDance 0.7s infinite alternate;
+}
+
+@keyframes teddyDance {
+    from {
+        transform: rotate(-10deg) scale(1);
+    }
+    to {
+        transform: rotate(10deg) scale(1.12);
+    }
+}
+
+/* Hearts */
+.heart {
+    position: fixed;
+    font-size: 25px;
+    animation: floatUp 4s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Final message */
+.finalMessage {
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.bigText {
+    font-size: 25px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.signature {
+    color: #ff4f9a;
+    font-size: 22px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<!-- RANDOM ANIMALS -->
+<div class="animal" style="top:5%;left:5%;">🐻</div>
+<div class="animal" style="top:8%;right:7%;animation-delay:.3s;">🐰</div>
+<div class="animal" style="bottom:8%;left:5%;animation-delay:.5s;">🐼</div>
+<div class="animal" style="bottom:10%;right:6%;animation-delay:.8s;">🐸</div>
+<div class="animal" style="top:45%;left:1%;animation-delay:.2s;">🐱</div>
+<div class="animal" style="top:45%;right:1%;animation-delay:.6s;">🐶</div>
+
+<div class="container">
+
+    <!-- FIRST SCREEN -->
+    <div class="card" id="screen1">
+
+        <div class="teddy">🧸</div>
+
+        <h1>HEYYYY YOU 👀</h1>
+
+        <p>
+            I have something VERY important to tell you...
+        </p>
+
+        <p>
+            But first you have to press the button 😌
+        </p>
+
+        <button id="tryBtn" onclick="tryAgain()">
+            Try Again 😈
+        </button>
+
+        <button id="yesBtn" onclick="startChaos()">
+            Fineee 😭
+        </button>
+
+    </div>
+
+    <!-- CHAOS SCREEN -->
+    <div class="card hidden" id="screen2">
+
+        <div style="font-size:65px;">
+            🧸 🐻 🐰 🐼 🐱 🐶
+        </div>
+
+        <h1>HAHAHAHA 😂</h1>
+
+        <p>
+            YOU ACTUALLY PRESSED IT.
+        </p>
+
+        <p>
+            Now you are trapped here with me. 😌
+        </p>
+
+        <p style="font-size:30px;">
+            🐸 🦆 🐵 🐯 🐨 🐷 🐮
+        </p>
+
+        <button onclick="moreChaos()">
+            DON'T PRESS THIS 😇
+        </button>
+
+        <button onclick="showFinal()">
+            Okay... enough 😭
+        </button>
+
+    </div>
+
+    <!-- FINAL MESSAGE -->
+    <div class="card hidden finalMessage" id="screen3">
+
+        <div style="font-size:75px;">
+            🧸💗
+        </div>
+
+        <h1>
+            HAPPY RAKSHA BANDHAN! 🪢💗
+        </h1>
+
+        <p class="bigText">
+            Okay okay... enough nonsense. 😂
+        </p>
+
+        <p class="bigText">
+            Behind all these annoying buttons, stupid animals
+            and completely unnecessary chaos...
+            there is actually a cute message. 🥹
+        </p>
+
+        <p class="bigText">
+            No matter how much we irritate each other,
+            fight over the dumbest things,
+            or annoy each other for absolutely no reason...
+            I'm really lucky to have you. 🫶
+        </p>
+
+        <p class="bigText">
+            So keep smiling, keep being your crazy self,
+            and remember that I'll always be there to annoy you. 😌😂
+        </p>
+
+        <p class="bigText">
+            You're stuck with me forever. 😈💗
+        </p>
+
+        <p class="signature">
+            Happy Raksha Bandhan! 🪢✨
+        </p>
+
+        <div style="font-size:50px;">
+            🐻 🐰 🐼 🐱 🐶 🐸
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+let tries = 0;
+
+function tryAgain() {
+
+    tries++;
+
+    const button = document.getElementById("tryBtn");
+
+    const messages = [
+        "Try Again 😈",
+        "NOPE 😂",
+        "Againnn 😭",
+        "You thought? 💀",
+        "TRY HARDER 😌",
+        "Almost... NOT 😂",
+        "Again AGAIN AGAIN!!!",
+        "Why are you still trying 😭",
+        "Okay last time... maybe 👀"
+    ];
+
+    button.innerText = messages[Math.min(tries - 1, messages.length - 1)];
+
+    // Make the button jump around
+    const x = Math.random() * 180 - 90;
+    const y = Math.random() * 120 - 60;
+
+    button.style.transform =
+        `translate(${x}px, ${y}px) rotate(${Math.random()*20-10}deg)`;
+
+    createHeart();
+}
+
+function startChaos() {
+
+    document.getElementById("screen1").classList.add("hidden");
+    document.getElementById("screen2").classList.remove("hidden");
+
+    for(let i = 0; i < 15; i++) {
+        setTimeout(createHeart, i * 150);
+    }
+}
+
+function moreChaos() {
+
+    const animals = [
+        "🐻","🐰","🐼","🐸","🐵",
+        "🐯","🐨","🐷","🐮","🦊",
+        "🐱","🐶","🦄","🐙","🦆"
+    ];
+
+    for(let i = 0; i < 20; i++) {
+
+        const animal = document.createElement("div");
+
+        animal.className = "animal";
+
+        animal.innerText =
+            animals[Math.floor(Math.random() * animals.length)];
+
+        animal.style.left = Math.random() * 90 + "%";
+        animal.style.top = Math.random() * 90 + "%";
+
+        document.body.appendChild(animal);
+
+        setTimeout(() => {
+            animal.remove();
+        }, 5000);
+    }
+
+    alert("I TOLD YOU NOT TO PRESS IT 😭😂");
+}
+
+function showFinal() {
+
+    document.getElementById("screen2").classList.add("hidden");
+    document.getElementById("screen3").classList.remove("hidden");
+
+    for(let i = 0; i < 40; i++) {
+        setTimeout(createHeart, i * 80);
+    }
+}
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["💗","💕","💖","💓","🩷","✨","🌸"];
+
+    heart.innerText =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "-30px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
+}
+
+</script>
+
+</body>
+</html>
