@@ -3,527 +3,802 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raksha Bandhan ❤️</title>
+
+<title>Raksha Bandhan.exe ❤️</title>
 
 <style>
-* {
-    box-sizing: border-box;
+
+*{
+    box-sizing:border-box;
 }
 
-body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: "Trebuchet MS", sans-serif;
-    background: linear-gradient(135deg, #ffd6e7, #fff0c9, #d9f5ff);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+body{
+    margin:0;
+    min-height:100vh;
+    font-family:"Trebuchet MS",Arial,sans-serif;
+    background:
+    radial-gradient(circle at 10% 20%,#ffd1e3 0 8%,transparent 20%),
+    radial-gradient(circle at 90% 80%,#cdeeff 0 8%,transparent 22%),
+    linear-gradient(135deg,#fff0f6,#fff8df,#e9f8ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
 }
 
-.container {
-    width: 92%;
-    max-width: 600px;
-    min-height: 650px;
-    background: rgba(255,255,255,0.88);
-    border-radius: 30px;
-    padding: 30px 20px;
-    text-align: center;
-    box-shadow: 0 15px 50px rgba(0,0,0,0.15);
-    position: relative;
-    overflow: hidden;
+/* floating background */
+
+.float{
+    position:fixed;
+    pointer-events:none;
+    animation:float 6s linear forwards;
+    font-size:25px;
 }
 
-h1 {
-    color: #ff4f81;
-    font-size: 2.3rem;
-    margin: 10px 0;
-}
-
-h2 {
-    color: #6c4ab6;
-}
-
-p {
-    font-size: 1.15rem;
-    line-height: 1.6;
-    color: #444;
-}
-
-/* Animals */
-
-.animals {
-    height: 170px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 35px;
-    margin: 10px;
-}
-
-.animal {
-    font-size: 90px;
-    display: inline-block;
-    animation: dance 0.7s infinite alternate ease-in-out;
-}
-
-.teddy {
-    animation-delay: .25s;
-}
-
-@keyframes dance {
-    from {
-        transform: rotate(-12deg) translateY(5px);
+@keyframes float{
+    from{
+        transform:translateY(110vh) rotate(0deg);
+        opacity:1;
     }
-    to {
-        transform: rotate(12deg) translateY(-15px);
+    to{
+        transform:translateY(-20vh) rotate(360deg);
+        opacity:0;
     }
 }
 
-/* Buttons */
+/* CARD */
 
-button {
-    border: none;
-    padding: 15px 28px;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: .2s;
-    box-shadow: 0 6px 15px rgba(0,0,0,.15);
+.card{
+    width:94%;
+    max-width:650px;
+    min-height:650px;
+    max-height:94vh;
+    overflow:auto;
+    background:rgba(255,255,255,.92);
+    border-radius:35px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0 20px 70px rgba(80,50,100,.25);
+    position:relative;
+    border:4px solid rgba(255,255,255,.8);
 }
 
-.start {
-    background: #ff5d8f;
-    color: white;
+.hidden{
+    display:none!important;
 }
 
-.yes {
-    background: #67c587;
-    color: white;
+/* TITLE */
+
+.logo{
+    font-size:13px;
+    letter-spacing:4px;
+    color:#9a75bb;
+    font-weight:bold;
 }
 
-.no {
-    background: #ff6b6b;
-    color: white;
-    position: absolute;
+h1{
+    color:#f04f83;
+    font-size:clamp(30px,8vw,52px);
+    margin:10px 0;
 }
 
-.hidden {
-    display: none;
+h2{
+    color:#7047a5;
 }
 
-.question {
-    min-height: 100px;
+p{
+    color:#4d4d4d;
+    font-size:17px;
+    line-height:1.6;
 }
 
-.counter {
-    color: #ff4f81;
-    font-weight: bold;
-    font-size: 1.1rem;
+/* ANIMALS */
+
+.animal-zone{
+    height:150px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
 }
 
-/* Hearts */
-
-.heart {
-    position: fixed;
-    bottom: -30px;
-    font-size: 25px;
-    animation: floatUp 5s linear forwards;
-    pointer-events: none;
+.animal{
+    font-size:72px;
+    display:inline-block;
+    animation:dance .65s infinite alternate ease-in-out;
 }
 
-@keyframes floatUp {
-    0% {
-        transform: translateY(0) rotate(0);
-        opacity: 1;
+.a2{
+    animation-delay:.12s;
+}
+
+.a3{
+    animation-delay:.25s;
+}
+
+.a4{
+    animation-delay:.38s;
+}
+
+@keyframes dance{
+    from{
+        transform:rotate(-12deg) translateY(7px);
     }
-
-    100% {
-        transform: translateY(-110vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-/* Final */
-
-.final-message {
-    animation: appear 1.5s ease;
-}
-
-.big-heart {
-    font-size: 80px;
-    animation: heartbeat 1s infinite;
-}
-
-@keyframes heartbeat {
-    0%,100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.18);
+    to{
+        transform:rotate(12deg) translateY(-17px);
     }
 }
 
-.confetti {
-    position: fixed;
-    top: -20px;
-    font-size: 25px;
-    animation: fall 4s linear forwards;
-    pointer-events: none;
+/* START */
+
+.start-btn{
+    background:linear-gradient(135deg,#ff4f88,#ff7a9f);
+    color:white;
+    border:0;
+    padding:17px 28px;
+    border-radius:50px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 8px 20px rgba(240,70,120,.3);
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(720deg);
+.start-btn:hover{
+    transform:scale(1.05);
+}
+
+/* GAME */
+
+.progress{
+    width:100%;
+    height:13px;
+    background:#eee;
+    border-radius:20px;
+    overflow:hidden;
+    margin:15px 0;
+}
+
+.progress-bar{
+    height:100%;
+    width:0%;
+    background:linear-gradient(90deg,#ff4f88,#9c6ade);
+    transition:.5s;
+}
+
+.badge{
+    display:inline-block;
+    padding:7px 15px;
+    border-radius:30px;
+    background:#ffe4ed;
+    color:#ed4d7f;
+    font-weight:bold;
+}
+
+.question-box{
+    background:#fff7fb;
+    border-radius:25px;
+    padding:18px;
+    margin:15px 0;
+    border:2px dashed #ffc2d7;
+}
+
+#question{
+    min-height:75px;
+}
+
+/* BUTTON AREA */
+
+#buttonArea{
+    height:190px;
+    position:relative;
+    margin-top:10px;
+}
+
+.game-btn{
+    position:absolute;
+    border:0;
+    padding:14px 24px;
+    border-radius:50px;
+    font-weight:bold;
+    font-size:16px;
+    cursor:pointer;
+    transition:.18s;
+}
+
+.yes{
+    background:#67c98a;
+    color:white;
+    left:28%;
+    top:65px;
+}
+
+.no{
+    background:#ff637d;
+    color:white;
+    left:55%;
+    top:65px;
+}
+
+/* fake loading */
+
+.loading{
+    width:100%;
+    height:18px;
+    background:#eee;
+    border-radius:20px;
+    overflow:hidden;
+    margin:20px 0;
+}
+
+.loading div{
+    width:0%;
+    height:100%;
+    background:#ff5d91;
+    animation:loading 3s forwards;
+}
+
+@keyframes loading{
+    to{
+        width:100%;
     }
 }
 
-.gift {
-    font-size: 55px;
-    animation: bounce 1s infinite alternate;
+/* FINAL */
+
+.final{
+    animation:appear 1.2s ease;
 }
 
-@keyframes bounce {
-    from {
-        transform: translateY(0);
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:scale(.7);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.big{
+    font-size:85px;
+    animation:heart 1s infinite;
+}
+
+@keyframes heart{
+    50%{
+        transform:scale(1.2);
+    }
+}
+
+.rakhi{
+    font-size:70px;
+    animation:spin 3s linear infinite;
+}
+
+@keyframes spin{
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+.final-message{
+    background:#fff6fa;
+    border-radius:25px;
+    padding:20px;
+    margin-top:15px;
+}
+
+.signature{
+    font-size:20px;
+    color:#ed4c7f;
+    font-weight:bold;
+}
+
+/* confetti */
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    font-size:25px;
+    pointer-events:none;
+    animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+
+/* shake */
+
+.shake{
+    animation:shake .35s;
+}
+
+@keyframes shake{
+    25%{transform:translateX(-8px)}
+    50%{transform:translateX(8px)}
+    75%{transform:translateX(-8px)}
+}
+
+/* mobile */
+
+@media(max-width:500px){
+
+    .card{
+        min-height:620px;
+        padding:18px;
     }
 
-    to {
-        transform: translateY(-15px);
+    .animal{
+        font-size:55px;
+    }
+
+    .animal-zone{
+        height:120px;
+    }
+
+    p{
+        font-size:15px;
+    }
+
+    #buttonArea{
+        height:210px;
     }
 }
 
-.small {
-    font-size: .9rem;
-    color: #777;
-}
-
-#gameArea {
-    position: relative;
-    height: 150px;
-    margin-top: 20px;
-}
 </style>
 </head>
 
 <body>
 
-<div class="container">
+<div class="card" id="card">
 
-    <!-- START SCREEN -->
+<!-- ================= START ================= -->
 
-    <div id="startScreen">
+<section id="start">
 
-        <div class="animals">
-            <div class="animal">🐼</div>
-            <div class="animal teddy">🧸</div>
-        </div>
+    <div class="logo">CLASSIFIED BROTHER PROJECT • 2026</div>
 
-        <h1>🎀 HAPPY RAKSHA BANDHAN 🎀</h1>
+    <div class="animal-zone">
+        <span class="animal">🐼</span>
+        <span class="animal a2">🧸</span>
+        <span class="animal a3">🐰</span>
+        <span class="animal a4">🐻</span>
+    </div>
 
-        <p>
-            I made something very important for you... 👀
+    <h1>🎀 HAPPY<br>RAKSHA BANDHAN 🎀</h1>
+
+    <p>
+        Hey you. 👀
+    </p>
+
+    <p>
+        Your brother has prepared something extremely important,
+        completely unnecessary and slightly annoying.
+    </p>
+
+    <p>
+        Before receiving your Raksha Bandhan surprise,
+        you must pass the <b>SISTER VERIFICATION TEST™</b>.
+    </p>
+
+    <button class="start-btn" onclick="startGame()">
+        😈 ACCEPT MY FATE
+    </button>
+
+    <p style="font-size:12px;color:#999;">
+        No sisters were harmed during the development of this website.
+    </p>
+
+</section>
+
+
+<!-- ================= GAME ================= -->
+
+<section id="game" class="hidden">
+
+    <div class="animal-zone">
+        <span class="animal">🐼</span>
+        <span class="animal a2">🧸</span>
+        <span class="animal a3">🐰</span>
+    </div>
+
+    <div class="badge">
+        SISTER VERIFICATION: <span id="number">1</span>/7
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar" id="progress"></div>
+    </div>
+
+    <div class="question-box">
+
+        <h2 id="question"></h2>
+
+        <p id="reaction">
+            Think carefully. Your brother is watching. 👀
         </p>
 
-        <p>
-            But unfortunately, you have to survive a tiny challenge first. 😈
-        </p>
+    </div>
 
-        <button class="start" onclick="startGame()">
-            Enter at your own risk 😂
+    <div id="buttonArea">
+
+        <button
+        class="game-btn yes"
+        onclick="answer()">
+            YES ❤️
+        </button>
+
+        <button
+        class="game-btn no"
+        id="noButton"
+        onclick="answer()">
+            NO 😭
         </button>
 
     </div>
 
+    <p style="font-size:12px;color:#aaa;">
+        Hint: One button has abandonment issues.
+    </p>
 
-    <!-- QUESTION SCREEN -->
+</section>
 
-    <div id="gameScreen" class="hidden">
 
-        <div class="animals">
-            <div class="animal">🐼</div>
-            <div class="animal teddy">🧸</div>
-        </div>
+<!-- ================= LOADING ================= -->
 
-        <div class="counter">
-            Challenge: <span id="count">0</span> / 7
-        </div>
+<section id="loadingScreen" class="hidden">
 
-        <h2 id="question">
-            Question loading...
-        </h2>
-
-        <p id="subtext">
-            Choose wisely 😌
-        </p>
-
-        <div id="gameArea">
-
-            <button class="yes" onclick="clickedButton()">
-                YES 😌
-            </button>
-
-            <button id="movingButton" class="no" onclick="clickedButton()">
-                NO 😭
-            </button>
-
-        </div>
-
-        <p class="small">
-            Warning: The buttons have trust issues. 😂
-        </p>
-
+    <div class="animal-zone">
+        <span class="animal">🐼</span>
+        <span class="animal a2">🧸</span>
+        <span class="animal a3">🐰</span>
+        <span class="animal a4">🐻</span>
     </div>
 
+    <h1>🤖 ANALYSING...</h1>
 
-    <!-- FINAL SCREEN -->
+    <p id="loadingText">
+        Checking sister behaviour...
+    </p>
 
-    <div id="finalScreen" class="hidden final-message">
+    <div class="loading">
+        <div></div>
+    </div>
 
-        <div class="animals">
-            <div class="animal">🐼</div>
-            <div class="animal teddy">🧸</div>
-        </div>
+    <p>
+        Please don't close the website. 😭
+    </p>
 
-        <div class="big-heart">❤️</div>
+</section>
 
-        <h1>YOU SURVIVED! 🎉</h1>
 
-        <div class="gift">🎁</div>
+<!-- ================= FINAL ================= -->
 
-        <h2>Okay okay... enough irritation 😂</h2>
+<section id="final" class="hidden final">
+
+    <div class="animal-zone">
+        <span class="animal">🐼</span>
+        <span class="animal a2">🧸</span>
+        <span class="animal a3">🐰</span>
+        <span class="animal a4">🐻</span>
+    </div>
+
+    <div class="big">❤️</div>
+
+    <div class="rakhi">🎀</div>
+
+    <h1>OKAY FINE. 😭</h1>
+
+    <h2>You passed.</h2>
+
+    <p>
+        After <b>7 completely unnecessary questions</b>,
+        I have officially decided that you are still my favourite
+        person to annoy. 😂
+    </p>
+
+    <div class="final-message">
+
+        <h2>From your annoying brother ❤️</h2>
 
         <p>
-            Behind all the fights, teasing, arguments and nonsense,
-            you're someone I'm genuinely lucky to have in my life. ❤️
+            We may fight over stupid things,
+            irritate each other,
+            steal each other's stuff,
+            and sometimes drive each other crazy...
         </p>
 
         <p>
-            No matter how much we annoy each other,
-            you'll always have a very special place in my heart.
+            But honestly, I'm really lucky to have you as my sister.
+            No matter how much I tease you,
+            I'll always care about you and be there for you.
+        </p>
+
+        <p>
+            You are not getting rid of me anytime soon. 😌
         </p>
 
         <h2>
-            HAPPY RAKSHA BANDHAN! 🎀🫶
+            Happy Raksha Bandhan! 🎀❤️
         </h2>
 
         <p>
-            Stay annoying.<br>
-            Stay amazing.<br>
-            And obviously... don't forget my Rakhi gift. 😌😂
+            Keep smiling.<br>
+            Keep being awesome.<br>
+            And keep tolerating your annoying brother. 😂
         </p>
 
-        <h1>🐼 🧸 🐻 🐰 🐱</h1>
-
-        <p>
-            Lots of love ❤️
-        </p>
+        <div class="signature">
+            — Your Favourite Brother 😎
+        </div>
 
     </div>
+
+    <div style="font-size:40px;margin-top:20px;">
+        🐼 🧸 🐰 🐻 🐱 🦊
+    </div>
+
+</section>
 
 </div>
 
 
 <script>
 
+/* ================= QUESTIONS ================= */
+
 const questions = [
 
-    "Are you ready for the most important Raksha Bandhan question ever? 👀",
+    "First question... Am I obviously your favourite brother? 😌",
 
-    "Do you agree that I'm obviously your favourite sibling? 😌",
+    "Would you survive one entire day without arguing with me? 😂",
 
-    "Will you admit that I annoy you only because I love you? 😂",
+    "If I steal your snacks, will you forgive me? 🍫",
 
-    "Will you share your snacks with me without complaining? 🍫",
+    "Do you secretly enjoy annoying me too? 👀",
 
-    "Do you promise to tolerate my nonsense for another year? 😭",
+    "If I ask nicely... will you share your food with me? 🥺",
 
-    "If I say I'm the best sibling, will you agree immediately? 😎",
+    "Are you finally accepting that your brother is amazing? 😎",
 
-    "FINAL QUESTION... Do you love me even though I'm extremely annoying? ❤️"
+    "FINAL QUESTION... Do you love your annoying brother? ❤️"
+
+];
+
+const reactions = [
+
+    "There is only one correct answer. 😌",
+
+    "Hmm... suspicious answer. 🤨",
+
+    "I knew it. You cannot be trusted around food. 😂",
+
+    "AHA! I KNEW IT! 😭",
+
+    "Please answer honestly. Your snacks depend on this. 🍫",
+
+    "The brother ego is getting dangerously large. 😎",
+
+    "Okay... this one actually matters. ❤️"
 
 ];
 
 let current = 0;
 
-function startGame() {
 
-    document.getElementById("startScreen").classList.add("hidden");
+/* ================= START ================= */
 
-    document.getElementById("gameScreen").classList.remove("hidden");
+function startGame(){
+
+    document.getElementById("start").classList.add("hidden");
+
+    document.getElementById("game").classList.remove("hidden");
 
     showQuestion();
 
-    createHearts();
+    floatingStuff();
 }
 
 
-function showQuestion() {
+/* ================= QUESTIONS ================= */
+
+function showQuestion(){
 
     document.getElementById("question").innerText =
         questions[current];
 
-    document.getElementById("count").innerText =
-        current;
+    document.getElementById("reaction").innerText =
+        reactions[current];
 
-    moveButton();
+    document.getElementById("number").innerText =
+        current + 1;
 
+    document.getElementById("progress").style.width =
+        ((current + 1) / 7 * 100) + "%";
+
+    moveNoButton();
 }
 
 
-function clickedButton() {
+/* ================= CLICK ================= */
+
+function answer(){
+
+    const card = document.getElementById("card");
+
+    card.classList.remove("shake");
+
+    void card.offsetWidth;
+
+    card.classList.add("shake");
 
     current++;
 
-    if (current >= 7) {
+    if(current >= 7){
 
-        document.getElementById("gameScreen")
+        document.getElementById("game")
             .classList.add("hidden");
 
-        document.getElementById("finalScreen")
+        document.getElementById("loadingScreen")
             .classList.remove("hidden");
 
-        createConfetti();
-
-        createHearts();
+        setTimeout(showFinal,3500);
 
         return;
     }
 
-    document.getElementById("count").innerText =
-        current;
-
     showQuestion();
-
-    // Make it increasingly annoying 😂
-
-    if (current >= 3) {
-        document.getElementById("subtext").innerText =
-            "HAHA! You thought that was the last one? 😈";
-    }
-
-    if (current >= 5) {
-        document.getElementById("subtext").innerText =
-            "Almost there... probably... 👀";
-    }
-
-    if (current === 6) {
-        document.getElementById("subtext").innerText =
-            "ONE MORE! DON'T ESCAPE! 😂";
-    }
 }
 
 
-function moveButton() {
+/* ================= ESCAPING BUTTON ================= */
+
+function moveNoButton(){
 
     const button =
-        document.getElementById("movingButton");
+        document.getElementById("noButton");
 
     const area =
-        document.getElementById("gameArea");
+        document.getElementById("buttonArea");
 
     const maxX =
-        area.clientWidth - button.offsetWidth;
+        Math.max(0,area.clientWidth-button.offsetWidth);
 
     const maxY =
-        area.clientHeight - button.offsetHeight;
+        Math.max(0,area.clientHeight-button.offsetHeight);
 
     const x =
-        Math.random() * Math.max(maxX, 10);
+        Math.random()*maxX;
 
     const y =
-        Math.random() * Math.max(maxY, 10);
+        Math.random()*maxY;
 
-    button.style.left = x + "px";
-    button.style.top = y + "px";
+    button.style.left=x+"px";
+    button.style.top=y+"px";
 }
 
 
-// Make NO button escape when mouse gets close
+/* Desktop mouse escape */
 
-const movingButton =
-    document.getElementById("movingButton");
+document.addEventListener("mouseover",function(e){
 
-movingButton.addEventListener("mouseenter", function() {
+    if(e.target.id==="noButton" && current<6){
 
-    if (current < 6) {
-        moveButton();
+        moveNoButton();
+
     }
 
 });
 
 
-// Hearts
+/* Mobile touch escape */
 
-function createHearts() {
+document.addEventListener("touchstart",function(e){
 
-    setInterval(() => {
+    if(e.target.id==="noButton" && current<6){
 
-        const heart =
-            document.createElement("div");
+        moveNoButton();
 
-        heart.className = "heart";
+    }
 
-        const hearts =
-            ["❤️","💕","💗","💖","💞","💓"];
+});
 
-        heart.innerText =
-            hearts[Math.floor(Math.random() * hearts.length)];
 
-        heart.style.left =
-            Math.random() * 100 + "vw";
+/* ================= FINAL ================= */
 
-        heart.style.animationDuration =
-            (3 + Math.random() * 3) + "s";
+function showFinal(){
 
-        document.body.appendChild(heart);
+    document.getElementById("loadingScreen")
+        .classList.add("hidden");
 
-        setTimeout(() => {
-            heart.remove();
-        }, 6000);
+    document.getElementById("final")
+        .classList.remove("hidden");
 
-    }, 700);
+    confetti();
+
+    floatingStuff();
+
 }
 
 
-// Confetti
+/* ================= CONFETTI ================= */
 
-function createConfetti() {
+function confetti(){
 
-    const pieces =
-        ["🎉","🎊","✨","❤️","🌸","🎀","🐼","🧸"];
+    const items=[
+        "🎉","🎊","✨","❤️","💕",
+        "🎀","🌸","🐼","🧸","🐰",
+        "🐻","⭐"
+    ];
 
-    for (let i = 0; i < 70; i++) {
+    for(let i=0;i<100;i++){
 
-        const confetti =
-            document.createElement("div");
+        const c=document.createElement("div");
 
-        confetti.className =
-            "confetti";
+        c.className="confetti";
 
-        confetti.innerText =
-            pieces[Math.floor(Math.random() * pieces.length)];
+        c.innerText=
+            items[Math.floor(Math.random()*items.length)];
 
-        confetti.style.left =
-            Math.random() * 100 + "vw";
+        c.style.left=
+            Math.random()*100+"vw";
 
-        confetti.style.animationDuration =
-            (2 + Math.random() * 4) + "s";
+        c.style.animationDuration=
+            (2+Math.random()*4)+"s";
 
-        confetti.style.animationDelay =
-            Math.random() * 2 + "s";
+        c.style.animationDelay=
+            Math.random()*2+"s";
 
-        document.body.appendChild(confetti);
+        document.body.appendChild(c);
 
-        setTimeout(() => {
-            confetti.remove();
-        }, 7000);
+        setTimeout(()=>{
+            c.remove();
+        },7000);
+
     }
+
+}
+
+
+/* ================= FLOATING HEARTS ================= */
+
+function floatingStuff(){
+
+    setInterval(()=>{
+
+        const f=document.createElement("div");
+
+        f.className="float";
+
+        const things=[
+            "❤️","💕","💖","✨",
+            "🌸","🎀","⭐","💗"
+        ];
+
+        f.innerText=
+            things[Math.floor(Math.random()*things.length)];
+
+        f.style.left=
+            Math.random()*100+"vw";
+
+        f.style.animationDuration=
+            (4+Math.random()*4)+"s";
+
+        document.body.appendChild(f);
+
+        setTimeout(()=>{
+            f.remove();
+        },8000);
+
+    },600);
+
 }
 
 </script>
 
 </body>
-</html>
+    </html>
