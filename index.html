@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Important Message 🎀</title>
+<title>For You 💗</title>
 
 <style>
-
 * {
     box-sizing: border-box;
 }
@@ -15,581 +14,373 @@
 body {
     margin: 0;
     min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ffd6e7, #fff3c4);
+    overflow: hidden;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    background: linear-gradient(135deg, #ffd6ec, #dff5ff, #fff1b8);
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    text-align: center;
+}
+
+.container {
+    width: 92%;
+    max-width: 600px;
+    padding: 25px;
+    position: relative;
+    z-index: 10;
 }
 
 .card {
-    width: 92%;
-    max-width: 420px;
-    background: white;
-    border-radius: 25px;
-    padding: 28px 20px;
-    text-align: center;
-    box-shadow: 0 10px 35px rgba(0,0,0,0.15);
+    background: rgba(255,255,255,0.88);
+    border-radius: 30px;
+    padding: 30px 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    border: 4px dashed #ff8fc7;
 }
 
 h1 {
-    color: #e91e63;
-}
-
-h2 {
-    color: #ff4081;
+    color: #ff4f9a;
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
 p {
-    font-size: 17px;
-    line-height: 1.5;
-}
-
-.emoji {
-    font-size: 60px;
+    color: #555;
+    font-size: 18px;
 }
 
 button {
     border: none;
+    padding: 15px 25px;
     border-radius: 30px;
-    padding: 14px 22px;
-    margin: 8px;
-    background: #e91e63;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 18px;
+    font-family: inherit;
     cursor: pointer;
+    margin: 10px;
+    transition: 0.2s;
 }
 
-button:active {
-    transform: scale(0.95);
+#tryBtn {
+    background: #ff69a8;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255,80,150,0.35);
 }
 
-.option {
-    display: block;
-    width: 85%;
-    margin: 10px auto;
+#tryBtn:hover {
+    transform: scale(1.08);
+}
+
+#yesBtn {
+    background: #7ee8a6;
+    color: #174d2b;
 }
 
 .hidden {
     display: none;
 }
 
-.progress-box {
-    width: 100%;
-    height: 20px;
-    background: #eee;
-    border-radius: 20px;
-    overflow: hidden;
-    margin: 20px 0;
-}
-
-.progress {
-    width: 0%;
-    height: 100%;
-    background: #e91e63;
-    transition: width 0.2s;
-}
-
-#escapeButton {
-    position: relative;
-}
-
-.small {
-    color: #888;
-    font-size: 13px;
-}
-
-.heart {
-    font-size: 45px;
-    animation: heartbeat 1s infinite;
-}
-
-@keyframes heartbeat {
-    50% {
-        transform: scale(1.2);
-    }
-}
-
-.confetti {
+/* Crazy animals */
+.animal {
     position: fixed;
-    top: -30px;
-    font-size: 25px;
-    animation: fall 3s linear forwards;
-    z-index: 10;
+    font-size: 45px;
+    animation: bounce 1.5s infinite alternate;
+    z-index: 1;
 }
 
-@keyframes fall {
+@keyframes bounce {
+    from {
+        transform: translateY(0) rotate(-8deg);
+    }
     to {
-        transform: translateY(110vh) rotate(720deg);
+        transform: translateY(-25px) rotate(8deg);
     }
 }
 
+/* Teddy */
+.teddy {
+    font-size: 85px;
+    animation: teddyDance 0.7s infinite alternate;
+}
+
+@keyframes teddyDance {
+    from {
+        transform: rotate(-10deg) scale(1);
+    }
+    to {
+        transform: rotate(10deg) scale(1.12);
+    }
+}
+
+/* Hearts */
+.heart {
+    position: fixed;
+    font-size: 25px;
+    animation: floatUp 4s linear forwards;
+    pointer-events: none;
+}
+
+@keyframes floatUp {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-100vh);
+        opacity: 0;
+    }
+}
+
+/* Final message */
+.finalMessage {
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.5) rotate(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) rotate(0);
+    }
+}
+
+.bigText {
+    font-size: 25px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.signature {
+    color: #ff4f9a;
+    font-size: 22px;
+    font-weight: bold;
+}
 </style>
 </head>
 
 <body>
 
-<div class="card">
+<!-- RANDOM ANIMALS -->
+<div class="animal" style="top:5%;left:5%;">🐻</div>
+<div class="animal" style="top:8%;right:7%;animation-delay:.3s;">🐰</div>
+<div class="animal" style="bottom:8%;left:5%;animation-delay:.5s;">🐼</div>
+<div class="animal" style="bottom:10%;right:6%;animation-delay:.8s;">🐸</div>
+<div class="animal" style="top:45%;left:1%;animation-delay:.2s;">🐱</div>
+<div class="animal" style="top:45%;right:1%;animation-delay:.6s;">🐶</div>
 
-<!-- SCREEN 1 -->
+<div class="container">
 
-<div id="screen1">
+    <!-- FIRST SCREEN -->
+    <div class="card" id="screen1">
 
-    <div class="emoji">🎀</div>
+        <div class="teddy">🧸</div>
 
-    <h1>IMPORTANT NOTICE</h1>
+        <h1>HEYYYY YOU 👀</h1>
 
-    <p>
-        This website has been specially created
-        for one very annoying sister.
-    </p>
+        <p>
+            I have something VERY important to tell you...
+        </p>
 
-    <p>
-        If you are that sister...
-        <br>
-        unfortunately, you have to continue. 😌
-    </p>
+        <p>
+            But first you have to press the button 😌
+        </p>
 
-    <button onclick="verification()">
-        I AM THE SISTER 😎
-    </button>
+        <button id="tryBtn" onclick="tryAgain()">
+            Try Again 😈
+        </button>
 
-</div>
+        <button id="yesBtn" onclick="startChaos()">
+            Fineee 😭
+        </button>
 
-
-<!-- SCREEN 2 -->
-
-<div id="screen2" class="hidden">
-
-    <div class="emoji">🔐</div>
-
-    <h2>SISTER VERIFICATION</h2>
-
-    <p>
-        Question 1:
-        <br>
-        How often do you steal your brother's stuff?
-    </p>
-
-    <button class="option" onclick="answer1('Never')">
-        Never 😇
-    </button>
-
-    <button class="option" onclick="answer1('Sometimes')">
-        Sometimes 👀
-    </button>
-
-    <button class="option" onclick="answer1('Every day')">
-        Every. Single. Day. 😈
-    </button>
-
-</div>
-
-
-<!-- SCREEN 3 -->
-
-<div id="screen3" class="hidden">
-
-    <div class="emoji">🤨</div>
-
-    <h2>INTERESTING...</h2>
-
-    <p id="answerText"></p>
-
-    <p>
-        But we need more evidence.
-    </p>
-
-    <button onclick="question2()">
-        CONTINUE 😭
-    </button>
-
-</div>
-
-
-<!-- SCREEN 4 -->
-
-<div id="screen4" class="hidden">
-
-    <div class="emoji">🕵️</div>
-
-    <h2>FINAL QUESTION</h2>
-
-    <p>
-        Who is the more annoying sibling?
-    </p>
-
-    <button class="option" onclick="answer2('Me')">
-        Obviously me 😎
-    </button>
-
-    <button class="option" onclick="answer2('You')">
-        Obviously you 😤
-    </button>
-
-    <button class="option" onclick="answer2('Both')">
-        Both 😂
-    </button>
-
-</div>
-
-
-<!-- SCREEN 5 -->
-
-<div id="screen5" class="hidden">
-
-    <div class="emoji">🔎</div>
-
-    <h2>ANALYSING ANSWERS...</h2>
-
-    <p id="loadingText">
-        Checking sister database...
-    </p>
-
-    <div class="progress-box">
-        <div class="progress" id="progress"></div>
     </div>
 
-    <h2 id="percent">0%</h2>
+    <!-- CHAOS SCREEN -->
+    <div class="card hidden" id="screen2">
+
+        <div style="font-size:65px;">
+            🧸 🐻 🐰 🐼 🐱 🐶
+        </div>
+
+        <h1>HAHAHAHA 😂</h1>
+
+        <p>
+            YOU ACTUALLY PRESSED IT.
+        </p>
+
+        <p>
+            Now you are trapped here with me. 😌
+        </p>
+
+        <p style="font-size:30px;">
+            🐸 🦆 🐵 🐯 🐨 🐷 🐮
+        </p>
+
+        <button onclick="moreChaos()">
+            DON'T PRESS THIS 😇
+        </button>
+
+        <button onclick="showFinal()">
+            Okay... enough 😭
+        </button>
+
+    </div>
+
+    <!-- FINAL MESSAGE -->
+    <div class="card hidden finalMessage" id="screen3">
+
+        <div style="font-size:75px;">
+            🧸💗
+        </div>
+
+        <h1>
+            HAPPY RAKSHA BANDHAN! 🪢💗
+        </h1>
+
+        <p class="bigText">
+            Okay okay... enough nonsense. 😂
+        </p>
+
+        <p class="bigText">
+            Behind all these annoying buttons, stupid animals
+            and completely unnecessary chaos...
+            there is actually a cute message. 🥹
+        </p>
+
+        <p class="bigText">
+            No matter how much we irritate each other,
+            fight over the dumbest things,
+            or annoy each other for absolutely no reason...
+            I'm really lucky to have you. 🫶
+        </p>
+
+        <p class="bigText">
+            So keep smiling, keep being your crazy self,
+            and remember that I'll always be there to annoy you. 😌😂
+        </p>
+
+        <p class="bigText">
+            You're stuck with me forever. 😈💗
+        </p>
+
+        <p class="signature">
+            Happy Raksha Bandhan! 🪢✨
+        </p>
+
+        <div style="font-size:50px;">
+            🐻 🐰 🐼 🐱 🐶 🐸
+        </div>
+
+    </div>
 
 </div>
-
-
-<!-- SCREEN 6 -->
-
-<div id="screen6" class="hidden">
-
-    <div class="emoji">⚠️</div>
-
-    <h2>RESULT FOUND</h2>
-
-    <p>
-        Sister has been officially classified as:
-    </p>
-
-    <h1>VERY ANNOYING 😭</h1>
-
-    <p>
-        Irritation level:
-        <b>99.99%</b>
-    </p>
-
-    <button onclick="trollScreen()">
-        SEE MY GIFT 🎁
-    </button>
-
-</div>
-
-
-<!-- SCREEN 7 -->
-
-<div id="screen7" class="hidden">
-
-    <div class="emoji">🎁</div>
-
-    <h2>YOUR GIFT IS READY!</h2>
-
-    <p>
-        Tap the button below.
-    </p>
-
-    <button id="escapeButton" onclick="escapeClicked()">
-        🎁 OPEN GIFT
-    </button>
-
-    <p class="small">
-        Don't worry... this is definitely the last step. 😇
-    </p>
-
-</div>
-
-
-<!-- SCREEN 8 -->
-
-<div id="screen8" class="hidden">
-
-    <div class="emoji">💀</div>
-
-    <h1>HAHAHAHA 😂</h1>
-
-    <h2>YOU GOT TROLLED!</h2>
-
-    <p>
-        Congratulations!
-    </p>
-
-    <p>
-        You just spent your precious time
-        trying to get a gift from me.
-    </p>
-
-    <p>
-        And the gift was...
-    </p>
-
-    <h1>NOTHING. 😭</h1>
-
-    <button onclick="cuteEnding()">
-        OKAY NOW GIVE ME MY GIFT 😤
-    </button>
-
-</div>
-
-
-<!-- FINAL SCREEN -->
-
-<div id="screen9" class="hidden">
-
-    <div class="heart">❤️</div>
-
-    <h1>Okay okay... 😭</h1>
-
-    <h2>Happy Raksha Bandhan! 🎀</h2>
-
-    <p>
-        I know I irritate you a lot...
-        and honestly, I'm probably going to
-        continue doing it. 😂
-    </p>
-
-    <p>
-        We fight, argue, annoy each other
-        and steal each other's things...
-    </p>
-
-    <p>
-        But behind all that,
-        you're genuinely very important to me.
-    </p>
-
-    <p>
-        No matter how much we fight,
-        I'll always be there for you.
-    </p>
-
-    <h2>
-        Love you, sis ❤️
-    </h2>
-
-    <p>
-        Happy Raksha Bandhan! 🎀
-    </p>
-
-    <p>
-        — Your favourite brother 😎
-    </p>
-
-    <button onclick="celebrate()">
-        🎉 ONE LAST SURPRISE
-    </button>
-
-</div>
-
-</div>
-
 
 <script>
 
+let tries = 0;
 
-function hideAll() {
+function tryAgain() {
 
-    for(let i = 1; i <= 9; i++) {
+    tries++;
 
-        let screen =
-            document.getElementById("screen" + i);
+    const button = document.getElementById("tryBtn");
 
-        if(screen) {
-            screen.classList.add("hidden");
-        }
-    }
-}
-
-
-function verification() {
-
-    hideAll();
-
-    document
-        .getElementById("screen2")
-        .classList.remove("hidden");
-}
-
-
-function answer1(answer) {
-
-    hideAll();
-
-    document
-        .getElementById("screen3")
-        .classList.remove("hidden");
-
-    document.getElementById("answerText").innerHTML =
-        "You selected: <b>" + answer +
-        "</b><br><br>" +
-        "Our highly scientific investigation says... " +
-        "we don't believe you. 😂";
-}
-
-
-function question2() {
-
-    hideAll();
-
-    document
-        .getElementById("screen4")
-        .classList.remove("hidden");
-}
-
-
-function answer2(answer) {
-
-    hideAll();
-
-    document
-        .getElementById("screen5")
-        .classList.remove("hidden");
-
-    startLoading();
-}
-
-
-function startLoading() {
-
-    let progress = 0;
-
-    let messages = [
-        "Checking sister database...",
-        "Scanning for evidence...",
-        "Calculating annoyance level...",
-        "Checking brother's patience...",
-        "Searching for patience...",
-        "Patience not found...",
-        "Almost finished...",
-        "99.99%..."
+    const messages = [
+        "Try Again 😈",
+        "NOPE 😂",
+        "Againnn 😭",
+        "You thought? 💀",
+        "TRY HARDER 😌",
+        "Almost... NOT 😂",
+        "Again AGAIN AGAIN!!!",
+        "Why are you still trying 😭",
+        "Okay last time... maybe 👀"
     ];
 
-    let interval = setInterval(function() {
+    button.innerText = messages[Math.min(tries - 1, messages.length - 1)];
 
-        progress++;
-
-        document.getElementById("progress")
-            .style.width = progress + "%";
-
-        document.getElementById("percent")
-            .innerText = progress + "%";
-
-        let index =
-            Math.floor(progress / 13);
-
-        if(index >= messages.length) {
-            index = messages.length - 1;
-        }
-
-        document.getElementById("loadingText")
-            .innerText = messages[index];
-
-        if(progress >= 100) {
-
-            clearInterval(interval);
-
-            setTimeout(function() {
-
-                hideAll();
-
-                document
-                    .getElementById("screen6")
-                    .classList.remove("hidden");
-
-            }, 1000);
-        }
-
-    }, 45);
-}
-
-
-function trollScreen() {
-
-    hideAll();
-
-    document
-        .getElementById("screen7")
-        .classList.remove("hidden");
-}
-
-
-function escapeClicked() {
-
-    let button =
-        document.getElementById("escapeButton");
-
-    let x =
-        Math.random() * 220 - 110;
-
-    let y =
-        Math.random() * 160 - 80;
+    // Make the button jump around
+    const x = Math.random() * 180 - 90;
+    const y = Math.random() * 120 - 60;
 
     button.style.transform =
-        "translate(" + x + "px," + y + "px)";
+        `translate(${x}px, ${y}px) rotate(${Math.random()*20-10}deg)`;
 
-    button.innerText =
-        "😂 TRY AGAIN";
-
+    createHeart();
 }
 
+function startChaos() {
 
-function cuteEnding() {
+    document.getElementById("screen1").classList.add("hidden");
+    document.getElementById("screen2").classList.remove("hidden");
 
-    hideAll();
-
-    document
-        .getElementById("screen9")
-        .classList.remove("hidden");
+    for(let i = 0; i < 15; i++) {
+        setTimeout(createHeart, i * 150);
+    }
 }
 
+function moreChaos() {
 
-function celebrate() {
+    const animals = [
+        "🐻","🐰","🐼","🐸","🐵",
+        "🐯","🐨","🐷","🐮","🦊",
+        "🐱","🐶","🦄","🐙","🦆"
+    ];
 
-    for(let i = 0; i < 100; i++) {
+    for(let i = 0; i < 20; i++) {
 
-        let confetti =
-            document.createElement("div");
+        const animal = document.createElement("div");
 
-        confetti.className = "confetti";
+        animal.className = "animal";
 
-        let emojis = [
-            "🎉",
-            "❤️",
-            "🎀",
-            "✨",
-            "🌸",
-            "💖",
-            "🎊",
-            "🥳"
-        ];
+        animal.innerText =
+            animals[Math.floor(Math.random() * animals.length)];
 
-        confetti.innerText =
-            emojis[
-                Math.floor(
-                    Math.random() * emojis.length
-                )
-            ];
+        animal.style.left = Math.random() * 90 + "%";
+        animal.style.top = Math.random() * 90 + "%";
 
-        confetti.style.left =
-            Math.random() * 100 + "vw";
+        document.body.appendChild(animal);
 
-        confetti.style.animationDuration =
-            (2 + Math.random() * 3) + "s";
-
-        document.body.appendChild(confetti);
-
-        setTimeout(function() {
-            confetti.remove();
+        setTimeout(() => {
+            animal.remove();
         }, 5000);
-
     }
 
+    alert("I TOLD YOU NOT TO PRESS IT 😭😂");
+}
+
+function showFinal() {
+
+    document.getElementById("screen2").classList.add("hidden");
+    document.getElementById("screen3").classList.remove("hidden");
+
+    for(let i = 0; i < 40; i++) {
+        setTimeout(createHeart, i * 80);
+    }
+}
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    const hearts = ["💗","💕","💖","💓","🩷","✨","🌸"];
+
+    heart.innerText =
+        hearts[Math.floor(Math.random() * hearts.length)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.bottom = "-30px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 4000);
 }
 
 </script>
