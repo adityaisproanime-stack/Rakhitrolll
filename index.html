@@ -1,667 +1,2291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <title>Raksha Bandhan ❤️</title>
 
+
 <style>
+
+/* =====================================================
+   BASIC
+===================================================== */
+
 *{
     box-sizing:border-box;
 }
 
 body{
+
     margin:0;
+
     min-height:100vh;
-    font-family:Arial, sans-serif;
-    background:linear-gradient(135deg,#ffd6e8,#fff1c9,#d9efff);
+
+    font-family:
+    "Trebuchet MS",
+    Arial,
+    sans-serif;
+
+    background:
+
+    radial-gradient(
+        circle at 10% 20%,
+        #ffd0e2 0 8%,
+        transparent 22%
+    ),
+
+    radial-gradient(
+        circle at 90% 80%,
+        #d6efff 0 8%,
+        transparent 22%
+    ),
+
+    linear-gradient(
+        135deg,
+        #fff0f6,
+        #fff8dc,
+        #eaf8ff
+    );
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
+
     overflow:hidden;
 }
 
+
+/* =====================================================
+   MAIN CARD
+===================================================== */
+
 .card{
+
     width:94%;
-    max-width:650px;
+
+    max-width:680px;
+
     min-height:650px;
+
     max-height:94vh;
+
     overflow:auto;
-    background:rgba(255,255,255,.94);
+
+    background:
+    rgba(255,255,255,.95);
+
     border-radius:35px;
+
     padding:25px;
+
     text-align:center;
-    box-shadow:0 20px 60px rgba(0,0,0,.18);
+
+    box-shadow:
+    0 20px 70px
+    rgba(80,50,100,.25);
+
+    position:relative;
 }
+
 
 .hidden{
+
     display:none !important;
+
 }
 
+
+/* =====================================================
+   TEXT
+===================================================== */
+
 .logo{
-    color:#9b6bc1;
+
+    color:#9a68bd;
+
     font-size:12px;
+
     font-weight:bold;
+
     letter-spacing:3px;
+
 }
 
 h1{
-    color:#f04f83;
-    font-size:clamp(32px,8vw,52px);
+
+    color:#f04e82;
+
+    font-size:
+    clamp(30px,8vw,52px);
+
+    margin:12px 0;
+
 }
 
 h2{
-    color:#7049a2;
+
+    color:#7047a0;
+
 }
 
 p{
+
     color:#444;
+
     font-size:17px;
+
     line-height:1.6;
+
 }
 
-/* ANIMALS */
+
+/* =====================================================
+   DANCING ANIMALS
+===================================================== */
 
 .animals{
-    height:150px;
+
+    height:145px;
+
     display:flex;
+
     justify-content:center;
+
     align-items:center;
-    gap:10px;
+
+    gap:8px;
+
 }
 
 .animal{
+
     font-size:65px;
-    animation:dance .65s infinite alternate ease-in-out;
+
+    display:inline-block;
+
+    animation:
+    dance .65s
+    infinite alternate
+    ease-in-out;
+
 }
 
-.a2{animation-delay:.15s;}
-.a3{animation-delay:.3s;}
-.a4{animation-delay:.45s;}
+.a2{
+
+    animation-delay:.12s;
+
+}
+
+.a3{
+
+    animation-delay:.24s;
+
+}
+
+.a4{
+
+    animation-delay:.36s;
+
+}
 
 @keyframes dance{
+
     from{
-        transform:rotate(-12deg) translateY(5px);
+
+        transform:
+        rotate(-12deg)
+        translateY(6px);
+
     }
+
     to{
-        transform:rotate(12deg) translateY(-15px);
+
+        transform:
+        rotate(12deg)
+        translateY(-15px);
+
     }
+
 }
 
-/* START BUTTON */
+
+/* =====================================================
+   START BUTTON
+===================================================== */
 
 .start-btn{
+
     border:0;
-    padding:17px 30px;
+
+    padding:
+    17px 30px;
+
     border-radius:50px;
-    background:linear-gradient(135deg,#ff4d85,#ff789f);
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff4d85,
+        #ff789f
+    );
+
     color:white;
+
     font-size:18px;
+
     font-weight:bold;
+
     cursor:pointer;
-    box-shadow:0 8px 20px rgba(255,70,130,.3);
+
+    box-shadow:
+    0 8px 20px
+    rgba(255,70,130,.3);
+
+    transition:.2s;
+
 }
 
-/* PROGRESS */
+.start-btn:hover{
+
+    transform:scale(1.06);
+
+}
+
+
+/* =====================================================
+   7 YES VERIFICATION
+===================================================== */
+
+.bigYesArea{
+
+    height:230px;
+
+    position:relative;
+
+    margin-top:20px;
+
+}
+
+#startYes{
+
+    position:absolute;
+
+    padding:
+    16px 28px;
+
+    border:0;
+
+    border-radius:50px;
+
+    background:#63c889;
+
+    color:white;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.15s;
+
+}
+
+
+/* =====================================================
+   COUNTER
+===================================================== */
+
+.counter{
+
+    display:inline-block;
+
+    background:#ffe1ec;
+
+    color:#e94c7d;
+
+    padding:
+    8px 16px;
+
+    border-radius:30px;
+
+    font-weight:bold;
+
+    margin:10px;
+
+}
+
+
+/* =====================================================
+   PROGRESS
+===================================================== */
 
 .progress{
+
     width:100%;
+
     height:12px;
+
     background:#eee;
+
     border-radius:20px;
+
     overflow:hidden;
+
 }
 
-.progress-bar{
+.progressBar{
+
     width:0%;
+
     height:100%;
-    background:linear-gradient(90deg,#ff4d85,#9c63d5);
-    transition:.5s;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff4d86,
+        #9d68d6
+    );
+
+    transition:.4s;
+
 }
 
-/* QUESTION */
 
-.badge{
-    display:inline-block;
-    padding:8px 16px;
-    border-radius:30px;
-    background:#ffe2ed;
-    color:#ed4c7f;
-    font-weight:bold;
-    margin:15px 0;
-}
+/* =====================================================
+   QUESTION BOX
+===================================================== */
 
-.question-box{
-    background:#fff7fb;
-    border:2px dashed #ffc1d5;
+.questionBox{
+
+    background:#fff6fa;
+
+    border:
+    2px dashed
+    #ffc2d5;
+
     border-radius:25px;
+
     padding:20px;
-    min-height:180px;
+
+    margin-top:20px;
+
+    min-height:190px;
+
 }
 
 #question{
-    font-size:24px;
-    color:#68469a;
+
+    font-size:23px;
+
 }
 
-.tryagain{
-    color:#ff426f;
-    font-weight:bold;
+.tryAgain{
+
     min-height:30px;
-}
 
-/* BUTTONS */
+    color:#ff3f6c;
 
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:25px;
-    margin-top:20px;
-}
-
-.choice{
-    border:0;
-    padding:15px 28px;
-    border-radius:50px;
-    font-size:17px;
     font-weight:bold;
-    cursor:pointer;
-    box-shadow:0 7px 15px rgba(0,0,0,.15);
+
 }
 
-.yes{
-    background:#61c98a;
-    color:white;
-}
+.shake{
 
-.no{
-    background:#ff617b;
-    color:white;
-}
+    animation:
+    shake .35s;
 
-.choice:hover{
-    transform:scale(1.08);
-}
-
-/* TRY AGAIN */
-
-.try-box{
-    animation:shake .35s;
 }
 
 @keyframes shake{
-    25%{transform:translateX(-8px)}
-    50%{transform:translateX(8px)}
-    75%{transform:translateX(-8px)}
+
+    25%{
+        transform:
+        translateX(-8px);
+    }
+
+    50%{
+        transform:
+        translateX(8px);
+    }
+
+    75%{
+        transform:
+        translateX(-8px);
+    }
+
 }
 
-/* LOADING */
 
-.loading-bar{
+/* =====================================================
+   QUESTION BUTTON AREA
+===================================================== */
+
+.buttonArea{
+
+    height:210px;
+
+    position:relative;
+
+    margin-top:5px;
+
+}
+
+.gameButton{
+
+    position:absolute;
+
+    border:0;
+
+    padding:
+    15px 25px;
+
+    border-radius:50px;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.18s;
+
+    box-shadow:
+    0 7px 15px
+    rgba(0,0,0,.15);
+
+}
+
+.yesButton{
+
+    background:#61c98a;
+
+    color:white;
+
+}
+
+.noButton{
+
+    background:#ff637c;
+
+    color:white;
+
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.loadingBar{
+
     width:100%;
+
     height:18px;
+
     background:#eee;
+
     border-radius:20px;
+
     overflow:hidden;
+
+    margin:25px 0;
+
 }
 
-.loading-fill{
-    width:0;
+.loadingFill{
+
+    width:0%;
+
     height:100%;
+
     background:#ff5d91;
-    animation:load 3s forwards;
+
+    animation:
+    load 3s forwards;
+
 }
 
 @keyframes load{
-    to{width:100%;}
+
+    to{
+        width:100%;
+    }
+
 }
 
-/* FINAL */
+
+/* =====================================================
+   FINAL SCREEN
+===================================================== */
 
 .final{
-    animation:appear 1.2s ease;
+
+    animation:
+    appear 1.2s ease;
+
 }
 
 @keyframes appear{
+
     from{
+
         opacity:0;
-        transform:scale(.6);
+
+        transform:
+        scale(.6);
+
     }
+
     to{
+
         opacity:1;
-        transform:scale(1);
+
+        transform:
+        scale(1);
+
     }
+
 }
 
-.big-heart{
+.bigHeart{
+
     font-size:90px;
-    animation:heartbeat 1s infinite;
+
+    animation:
+    heartbeat 1s infinite;
+
 }
 
 @keyframes heartbeat{
-    50%{transform:scale(1.18);}
+
+    50%{
+        transform:
+        scale(1.18);
+    }
+
 }
 
-.final-message{
+.finalMessage{
+
     background:#fff5fa;
+
     border-radius:25px;
+
     padding:20px;
-    border:2px solid #ffd0df;
+
+    border:
+    2px solid
+    #ffd0df;
+
 }
 
 .signature{
+
     color:#ed4d7f;
+
     font-size:20px;
+
     font-weight:bold;
+
 }
 
-/* CONFETTI */
+
+/* =====================================================
+   LAST BUTTON
+===================================================== */
+
+#legendButtonArea{
+
+    margin-top:25px;
+
+    padding:20px;
+
+}
+
+#madeButton{
+
+    border:0;
+
+    padding:
+    18px 25px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #ff3f78,
+        #ff8b5c,
+        #9d5cff
+    );
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 10px 30px
+    rgba(255,70,130,.35);
+
+    animation:
+    pulseButton 1.2s infinite;
+
+}
+
+@keyframes pulseButton{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.07);
+    }
+
+}
+
+
+/* =====================================================
+   LEGENDARY SCREEN
+===================================================== */
+
+.legendary{
+
+    animation:
+    legendEntry 1s ease;
+
+}
+
+@keyframes legendEntry{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        scale(.2)
+        rotate(-10deg);
+
+    }
+
+    60%{
+
+        transform:
+        scale(1.1)
+        rotate(3deg);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+        scale(1)
+        rotate(0);
+
+    }
+
+}
+
+.crazyAnimals{
+
+    font-size:45px;
+
+    line-height:1.8;
+
+    animation:
+    crazyDance .35s
+    infinite alternate;
+
+}
+
+@keyframes crazyDance{
+
+    from{
+
+        transform:
+        rotate(-5deg)
+        scale(1);
+
+    }
+
+    to{
+
+        transform:
+        rotate(5deg)
+        scale(1.08);
+
+    }
+
+}
+
+.lightning{
+
+    font-size:90px;
+
+    animation:
+    lightning .7s
+    infinite alternate;
+
+}
+
+@keyframes lightning{
+
+    from{
+
+        transform:
+        scale(.8)
+        rotate(-8deg);
+
+    }
+
+    to{
+
+        transform:
+        scale(1.2)
+        rotate(8deg);
+
+    }
+
+}
+
+.legendDescription{
+
+    background:
+    linear-gradient(
+        135deg,
+        #fff3f8,
+        #fff9df
+    );
+
+    border:
+    3px solid
+    #ffd0df;
+
+    border-radius:30px;
+
+    padding:25px;
+
+    box-shadow:
+    0 15px 40px
+    rgba(100,60,120,.15);
+
+}
+
+.finalAnimals{
+
+    font-size:45px;
+
+    margin-top:20px;
+
+    animation:
+    crazyDance .4s
+    infinite alternate;
+
+}
+
+
+/* =====================================================
+   CONFETTI
+===================================================== */
 
 .confetti{
+
     position:fixed;
+
     top:-30px;
+
     font-size:25px;
+
     pointer-events:none;
-    animation:fall 4s linear forwards;
+
+    animation:
+    fall 4s
+    linear forwards;
+
 }
 
 @keyframes fall{
+
     to{
-        transform:translateY(110vh) rotate(720deg);
+
+        transform:
+        translateY(110vh)
+        rotate(720deg);
+
     }
+
 }
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:500px){
 
     .card{
+
         padding:18px;
+
     }
 
     .animal{
-        font-size:50px;
+
+        font-size:48px;
+
     }
 
     #question{
+
         font-size:20px;
+
     }
 
     p{
+
         font-size:15px;
+
     }
+
 }
+
 </style>
+
 </head>
 
+
 <body>
+
 
 <div class="card">
 
 
-<!-- ================= START ================= -->
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
-<section id="start">
+<section id="intro">
 
     <div class="logo">
-        BROTHER'S SECRET RAKSHA BANDHAN PROJECT 🤫
+
+        BROTHER'S SECRET
+        RAKSHA BANDHAN PROJECT 🤫
+
     </div>
+
 
     <div class="animals">
-        <span class="animal">🐼</span>
-        <span class="animal a2">🧸</span>
-        <span class="animal a3">🐰</span>
-        <span class="animal a4">🐻</span>
+
+        <span class="animal">
+            🐼
+        </span>
+
+        <span class="animal a2">
+            🧸
+        </span>
+
+        <span class="animal a3">
+            🐰
+        </span>
+
+        <span class="animal a4">
+            🐻
+        </span>
+
     </div>
 
+
     <h1>
+
         🎀 HAPPY<br>
         RAKSHA BANDHAN 🎀
+
     </h1>
 
-    <p>
-        Hello, favourite sister. 😌
-    </p>
 
     <p>
-        Your brother has prepared a very important
-        <b>7-question verification test.</b>
+
+        Hey, favourite sister. 👀
+
     </p>
 
+
     <p>
-        There is only one small problem...
+
+        Your brother has prepared
+        something very important.
+
+    </p>
+
+
+    <p>
+
+        Unfortunately...
+
         <br>
-        <b>ALL THE CORRECT ANSWERS ARE YES. 😈</b>
+
+        you must complete a
+        completely unnecessary
+        verification first. 😈
+
     </p>
 
-    <button class="start-btn" onclick="startGame()">
-        😈 START THE TEST
+
+    <button
+        class="start-btn"
+        onclick="startVerification()">
+
+        😈 I'M READY
+
     </button>
 
-</section>
-
-
-<!-- ================= GAME ================= -->
-
-<section id="game" class="hidden">
-
-    <div class="animals">
-        <span class="animal">🐼</span>
-        <span class="animal a2">🧸</span>
-        <span class="animal a3">🐰</span>
-    </div>
-
-    <div class="badge">
-        QUESTION <span id="questionNumber">1</span> / 7
-    </div>
-
-    <div class="progress">
-        <div class="progress-bar" id="progress"></div>
-    </div>
-
-    <div class="question-box" id="questionBox">
-
-        <h2 id="question"></h2>
-
-        <p id="tryAgain" class="tryagain"></p>
-
-    </div>
-
-    <div class="buttons">
-
-        <button class="choice yes" onclick="yesAnswer()">
-            YES ❤️
-        </button>
-
-        <button class="choice no" onclick="noAnswer()">
-            NO 😭
-        </button>
-
-    </div>
-
-    <p style="font-size:12px;color:#999;">
-        Choose carefully. Your brother has already decided the correct answer. 😂
-    </p>
 
 </section>
 
 
-<!-- ================= LOADING ================= -->
 
-<section id="loading" class="hidden">
+<!-- =====================================================
+     7 YES VERIFICATION
+===================================================== -->
+
+<section
+id="verification"
+class="hidden">
+
 
     <div class="animals">
-        <span class="animal">🐼</span>
-        <span class="animal a2">🧸</span>
-        <span class="animal a3">🐰</span>
-        <span class="animal a4">🐻</span>
+
+        <span class="animal">
+            🐼
+        </span>
+
+        <span class="animal a2">
+            🧸
+        </span>
+
+        <span class="animal a3">
+            🐰
+        </span>
+
     </div>
 
-    <h1>🤖 VERIFICATION COMPLETE</h1>
-
-    <p>
-        Congratulations.
-        You have successfully agreed with your brother
-        <b>7 times.</b> 😂
-    </p>
-
-    <p>
-        Preparing your actual Raksha Bandhan message...
-    </p>
-
-    <div class="loading-bar">
-        <div class="loading-fill"></div>
-    </div>
-
-</section>
-
-
-<!-- ================= FINAL ================= -->
-
-<section id="final" class="hidden final">
-
-    <div class="animals">
-        <span class="animal">🐼</span>
-        <span class="animal a2">🧸</span>
-        <span class="animal a3">🐰</span>
-        <span class="animal a4">🐻</span>
-    </div>
-
-    <div class="big-heart">
-        ❤️
-    </div>
-
-    <h1>
-        SURPRISE! 🎉
-    </h1>
 
     <h2>
-        Happy Raksha Bandhan! 🎀
+
+        🚨 SISTER VERIFICATION 🚨
+
     </h2>
 
-    <div class="final-message">
 
-        <h2>
-            From your annoying brother ❤️
-        </h2>
+    <p>
 
-        <p>
-            Okay... enough bullying for one website. 😂
-        </p>
+        To continue,
 
-        <p>
-            We fight, tease each other, irritate each other,
-            and somehow still manage to care about each other
-            more than we admit.
-        </p>
+        <b>
+            press YES.
+        </b>
 
-        <p>
-            No matter how annoying I become,
-            I hope you always know that
-            <b>I'll always have your back.</b> ❤️
-        </p>
+    </p>
 
-        <p>
-            I'm genuinely lucky to have you as my sister.
-        </p>
 
-        <h2>
-            HAPPY RAKSHA BANDHAN! 🫶🎀
-        </h2>
+    <p>
 
-        <p>
-            Keep smiling.<br>
-            Keep being awesome.<br>
-            And please continue tolerating your
-            extremely talented brother. 😎😂
-        </p>
+        Unfortunately...
 
-        <div class="signature">
-            — Your Favourite Brother ❤️
+        <b>
+            you have to press it 7 times. 😂
+        </b>
+
+    </p>
+
+
+    <div class="counter">
+
+        YES PRESSED:
+
+        <span id="yesCounter">
+            0
+        </span>
+
+        /7
+
+    </div>
+
+
+    <div class="bigYesArea">
+
+
+        <button
+        id="startYes"
+        onclick="verificationYes()">
+
+            YES ❤️
+
+        </button>
+
+
+    </div>
+
+
+    <p id="verificationMessage">
+
+        Press it. 😌
+
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     QUESTIONS
+===================================================== -->
+
+<section
+id="questions"
+class="hidden">
+
+
+    <div class="animals">
+
+        <span class="animal">
+            🐼
+        </span>
+
+        <span class="animal a2">
+            🧸
+        </span>
+
+        <span class="animal a3">
+            🐰
+        </span>
+
+    </div>
+
+
+    <div class="counter">
+
+        QUESTION
+
+        <span id="questionNumber">
+            1
+        </span>
+
+        /7
+
+    </div>
+
+
+    <div class="progress">
+
+        <div
+        class="progressBar"
+        id="progressBar">
         </div>
 
     </div>
 
-    <div style="font-size:42px;margin-top:20px;">
-        🐼 🧸 🐰 🐻 🐱 🦊 🐨
+
+    <div
+    class="questionBox"
+    id="questionBox">
+
+
+        <h2 id="question">
+        </h2>
+
+
+        <p
+        id="tryAgain"
+        class="tryAgain">
+        </p>
+
+
     </div>
 
+
+    <div
+    class="buttonArea"
+    id="buttonArea">
+
+
+        <button
+        id="yesButton"
+        class="gameButton yesButton"
+        onclick="yesAnswer()">
+
+            YES ❤️
+
+        </button>
+
+
+        <button
+        id="noButton"
+        class="gameButton noButton"
+        onclick="noAnswer()">
+
+            NO 😭
+
+        </button>
+
+
+    </div>
+
+
+    <p
+    style="
+    font-size:12px;
+    color:#999;
+    ">
+
+        Hint:
+        The brother has already decided
+        the correct answer. 😂
+
+    </p>
+
+
 </section>
+
+
+
+<!-- =====================================================
+     LOADING
+===================================================== -->
+
+<section
+id="loading"
+class="hidden">
+
+
+    <div class="animals">
+
+        <span class="animal">
+            🐼
+        </span>
+
+        <span class="animal a2">
+            🧸
+        </span>
+
+        <span class="animal a3">
+            🐰
+        </span>
+
+        <span class="animal a4">
+            🐻
+        </span>
+
+    </div>
+
+
+    <h1>
+
+        🤖 PROCESSING...
+
+    </h1>
+
+
+    <p>
+
+        Checking sister status...
+
+    </p>
+
+
+    <div class="loadingBar">
+
+        <div class="loadingFill">
+        </div>
+
+    </div>
+
+
+    <p>
+
+        Please wait...
+
+        <br>
+
+        Your brother is preparing
+        something special. ❤️
+
+    </p>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL MESSAGE
+===================================================== -->
+
+<section
+id="final"
+class="hidden final">
+
+
+    <div class="animals">
+
+        <span class="animal">
+            🐼
+        </span>
+
+        <span class="animal a2">
+            🧸
+        </span>
+
+        <span class="animal a3">
+            🐰
+        </span>
+
+        <span class="animal a4">
+            🐻
+        </span>
+
+    </div>
+
+
+    <div class="bigHeart">
+
+        ❤️
+
+    </div>
+
+
+    <h1>
+
+        SURPRISE! 🎉
+
+    </h1>
+
+
+    <h2>
+
+        HAPPY RAKSHA BANDHAN! 🎀
+
+    </h2>
+
+
+    <div class="finalMessage">
+
+
+        <h2>
+
+            From your annoying brother ❤️
+
+        </h2>
+
+
+        <p>
+
+            Okay...
+
+            you've officially survived
+            the most unnecessary
+            Raksha Bandhan test ever created. 😂
+
+        </p>
+
+
+        <p>
+
+            We fight, tease each other,
+            irritate each other,
+            steal things from each other
+            and somehow still manage
+            to care about each other.
+
+        </p>
+
+
+        <p>
+
+            No matter how much I annoy you,
+
+            I'll always care about you,
+            support you,
+            and have your back. ❤️
+
+        </p>
+
+
+        <p>
+
+            You're stuck with me
+            as your brother,
+
+            so unfortunately...
+
+            <b>
+                there is no unsubscribe button. 😌😂
+            </b>
+
+        </p>
+
+
+        <h2>
+
+            HAPPY RAKSHA BANDHAN! 🫶🎀
+
+        </h2>
+
+
+        <p>
+
+            Keep smiling.
+
+            <br>
+
+            Keep being amazing.
+
+            <br>
+
+            And keep tolerating
+            your extremely annoying brother. 😂
+
+        </p>
+
+
+        <div class="signature">
+
+            From your loving brother,
+
+            <br>
+
+            <b>
+                Aditya Singh ❤️
+            </b>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FINAL BUTTON -->
+
+    <div id="legendButtonArea">
+
+
+        <p>
+
+            Wait...
+
+            there's actually
+            <b>ONE LAST THING.</b> 👀
+
+        </p>
+
+
+        <button
+        id="madeButton"
+        onclick="legendaryMode()">
+
+            ❤️ MADE WITH LOVE BY ADITYA ❤️
+
+        </button>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     LEGENDARY MODE
+===================================================== -->
+
+<section
+id="legendary"
+class="hidden legendary">
+
+
+    <div class="crazyAnimals">
+
+        🐼 🧸 🐰 🐻 🦊 🐱 🐨 🐯
+
+    </div>
+
+
+    <div class="lightning">
+
+        ⚡
+
+    </div>
+
+
+    <h1>
+
+        LEGENDARY MODE
+        <br>
+        ACTIVATED! 🔥
+
+    </h1>
+
+
+    <h2>
+
+        THE BROTHER HAS ARRIVED. 😎
+
+    </h2>
+
+
+    <div class="legendDescription">
+
+
+        <p>
+
+            ✨
+
+            <b>
+                ADITYA SINGH
+            </b>
+
+            ✨
+
+        </p>
+
+
+        <p>
+
+            Professional sister-annoyer 😈
+
+            <br>
+
+            Certified snack thief 🍫
+
+            <br>
+
+            Full-time nonsense generator 😂
+
+            <br>
+
+            Part-time philosopher 🤓
+
+            <br>
+
+            24/7 brother ❤️
+
+            <br>
+
+            Occasional genius 🧠
+
+            <br>
+
+            And officially...
+
+        </p>
+
+
+        <h2>
+
+            YOUR MOST LEGENDARY
+            BROTHER. 🗿🔥
+
+        </h2>
+
+
+        <p>
+
+            Built with approximately
+
+            <b>
+                1% logic,
+                49% madness,
+                and 50% love.
+            </b>
+
+            ❤️
+
+        </p>
+
+
+        <p>
+
+            <b>
+
+                No refunds.
+
+                <br>
+
+                No replacements.
+
+                <br>
+
+                No escape. 😂
+
+            </b>
+
+        </p>
+
+
+        <div class="finalAnimals">
+
+            🐼 🧸 💃 🕺 🐰 🐻
+
+        </div>
+
+
+        <h1>
+
+            ❤️ HAPPY RAKSHA BANDHAN ❤️
+
+        </h1>
+
+
+        <p>
+
+            — Aditya Singh 😎
+
+        </p>
+
+
+    </div>
+
+
+</section>
+
 
 </div>
 
 
+
 <script>
 
-/* =========================================
+
+/* =====================================================
    QUESTIONS
-========================================= */
+===================================================== */
 
 const questions = [
 
-    "Be honest... am I obviously the BEST brother ever? 😌",
+    "Let's settle this once and for all... Am I obviously the BEST brother ever? 😌",
 
-    "Do you agree that you are extremely lucky to have a brother like me? 😎",
+    "Do you agree that you're extremely lucky to have a brother like me? 😎",
 
-    "Will you admit that I am allowed to irritate you because I'm your brother? 😂",
+    "Will you admit that I'm allowed to annoy you because I'm your brother? 😂",
 
-    "Do you promise to share your snacks with me whenever I ask nicely? 🍫",
+    "Do you agree that I deserve the BEST Rakhi gift this year? 🎁",
 
-    "Will you agree that I deserve the BEST Rakhi gift this year? 🎁",
+    "Will you share your snacks with me without saying NO? 🍫",
 
-    "Even after all my nonsense... am I still your favourite brother? 👀",
+    "After all my nonsense... am I STILL your favourite brother? 👀",
 
     "FINAL QUESTION... Do you love your annoying brother more than you will admit? ❤️"
 
 ];
 
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+let verificationClicks = 0;
+
 let currentQuestion = 0;
 
 
-/* =========================================
-   START GAME
-========================================= */
+/* =====================================================
+   START VERIFICATION
+===================================================== */
 
-function startGame(){
+function startVerification(){
 
-    document.getElementById("start")
-        .classList.add("hidden");
+    document
+    .getElementById("intro")
+    .classList
+    .add("hidden");
 
-    document.getElementById("game")
-        .classList.remove("hidden");
 
-    currentQuestion = 0;
+    document
+    .getElementById("verification")
+    .classList
+    .remove("hidden");
 
-    showQuestion();
+
+    moveStartYes();
 
 }
 
 
-/* =========================================
+/* =====================================================
+   FIRST 7 YES CLICKS
+===================================================== */
+
+function verificationYes(){
+
+    verificationClicks++;
+
+
+    document
+    .getElementById("yesCounter")
+    .innerText =
+    verificationClicks;
+
+
+    const messages = [
+
+        "Again. 😌",
+
+        "That was only TWO. 😂",
+
+        "Keep going...",
+
+        "You're doing great. Probably. 😭",
+
+        "More dedication please. 😈",
+
+        "Almost there! 😂",
+
+        "ONE MORE... 👀"
+
+    ];
+
+
+    if(verificationClicks < 7){
+
+        document
+        .getElementById("verificationMessage")
+        .innerText =
+        messages[
+            verificationClicks - 1
+        ];
+
+
+        moveStartYes();
+
+    }
+
+    else{
+
+        document
+        .getElementById("verificationMessage")
+        .innerText =
+        "🎉 FINALLY! Now the REAL questions begin...";
+
+
+        setTimeout(()=>{
+
+
+            document
+            .getElementById("verification")
+            .classList
+            .add("hidden");
+
+
+            document
+            .getElementById("questions")
+            .classList
+            .remove("hidden");
+
+
+            currentQuestion=0;
+
+
+            showQuestion();
+
+
+        },1200);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOVE FIRST YES BUTTON
+===================================================== */
+
+function moveStartYes(){
+
+    const button =
+    document.getElementById("startYes");
+
+
+    const area =
+    document.querySelector(".bigYesArea");
+
+
+    const maxX =
+    area.clientWidth -
+    button.offsetWidth;
+
+
+    const maxY =
+    area.clientHeight -
+    button.offsetHeight;
+
+
+    const x =
+    Math.random() *
+    Math.max(maxX,10);
+
+
+    const y =
+    Math.random() *
+    Math.max(maxY,10);
+
+
+    button.style.left =
+    x+"px";
+
+
+    button.style.top =
+    y+"px";
+
+
+    button.style.transform =
+    "none";
+
+}
+
+
+/* =====================================================
    SHOW QUESTION
-========================================= */
+===================================================== */
 
 function showQuestion(){
 
-    document.getElementById("question")
-        .innerText = questions[currentQuestion];
+    document
+    .getElementById("question")
+    .innerText =
+    questions[currentQuestion];
 
-    document.getElementById("questionNumber")
-        .innerText = currentQuestion + 1;
 
-    document.getElementById("progress")
-        .style.width =
-        ((currentQuestion) / 7 * 100) + "%";
+    document
+    .getElementById("questionNumber")
+    .innerText =
+    currentQuestion+1;
 
-    document.getElementById("tryAgain")
-        .innerText = "";
+
+    document
+    .getElementById("progressBar")
+    .style.width =
+    (currentQuestion/7*100)+"%";
+
+
+    document
+    .getElementById("tryAgain")
+    .innerText="";
+
+
+    moveQuestionButtons();
 
 }
 
 
-/* =========================================
+/* =====================================================
    NO ANSWER
-========================================= */
+===================================================== */
 
 function noAnswer(){
 
     const box =
-        document.getElementById("questionBox");
+    document.getElementById("questionBox");
 
-    box.classList.remove("try-box");
+
+    box.classList.remove("shake");
+
 
     void box.offsetWidth;
 
-    box.classList.add("try-box");
 
-    document.getElementById("tryAgain")
-        .innerText =
-        "❌ TRY AGAIN! 😈 That is not the correct answer.";
+    box.classList.add("shake");
+
+
+    const messages = [
+
+        "❌ WRONG! Try again. 😈",
+
+        "❌ Nice try. But NO is not accepted here. 😂",
+
+        "❌ Your brother disagrees. Try again. 😌",
+
+        "❌ Absolutely not. I know you can do better. 😭",
+
+        "❌ SYSTEM SAYS: YES. 👀",
+
+        "❌ Brother approval required. 😂",
+
+        "❌ Nope. I'm not accepting that answer. ❤️"
+
+    ];
+
+
+    document
+    .getElementById("tryAgain")
+    .innerText =
+    messages[currentQuestion];
+
+
+    moveQuestionButtons();
 
 }
 
 
-/* =========================================
+/* =====================================================
    YES ANSWER
-========================================= */
+===================================================== */
 
 function yesAnswer(){
 
     currentQuestion++;
 
-    if(currentQuestion >= 7){
 
-        document.getElementById("game")
-            .classList.add("hidden");
+    if(currentQuestion>=7){
 
-        document.getElementById("loading")
-            .classList.remove("hidden");
+        document
+        .getElementById("questions")
+        .classList
+        .add("hidden");
 
-        setTimeout(showFinal,3200);
+
+        document
+        .getElementById("loading")
+        .classList
+        .remove("hidden");
+
+
+        setTimeout(
+            showFinal,
+            3200
+        );
+
 
         return;
+
     }
+
 
     showQuestion();
 
 }
 
 
-/* =========================================
-   FINAL SCREEN
-========================================= */
+/* =====================================================
+   RANDOM QUESTION BUTTONS
+===================================================== */
+
+function moveQuestionButtons(){
+
+    const area =
+    document.getElementById("buttonArea");
+
+
+    const yes =
+    document.getElementById("yesButton");
+
+
+    const no =
+    document.getElementById("noButton");
+
+
+    const maxX =
+    area.clientWidth -
+    yes.offsetWidth;
+
+
+    const maxY =
+    area.clientHeight -
+    yes.offsetHeight;
+
+
+    const x1 =
+    Math.random() *
+    Math.max(maxX,10);
+
+
+    const y1 =
+    Math.random() *
+    Math.max(maxY,10);
+
+
+    const x2 =
+    Math.random() *
+    Math.max(maxX,10);
+
+
+    const y2 =
+    Math.random() *
+    Math.max(maxY,10);
+
+
+    yes.style.left =
+    x1+"px";
+
+
+    yes.style.top =
+    y1+"px";
+
+
+    no.style.left =
+    x2+"px";
+
+
+    no.style.top =
+    y2+"px";
+
+}
+
+
+/* =====================================================
+   FINAL
+===================================================== */
 
 function showFinal(){
 
-    document.getElementById("loading")
-        .classList.add("hidden");
+    document
+    .getElementById("loading")
+    .classList
+    .add("hidden");
 
-    document.getElementById("final")
-        .classList.remove("hidden");
+
+    document
+    .getElementById("final")
+    .classList
+    .remove("hidden");
+
 
     createConfetti();
 
 }
 
 
-/* =========================================
+/* =====================================================
+   LEGENDARY MODE
+===================================================== */
+
+function legendaryMode(){
+
+    document
+    .getElementById("final")
+    .classList
+    .add("hidden");
+
+
+    document
+    .getElementById("legendary")
+    .classList
+    .remove("hidden");
+
+
+    createLegendaryConfetti();
+
+
+    startLegendaryMusic();
+
+}
+
+
+/* =====================================================
    CONFETTI
-========================================= */
+===================================================== */
 
 function createConfetti(){
 
-    const pieces = [
-        "🎉","🎊","✨","❤️",
-        "💕","🎀","🌸","🐼",
-        "🧸","🐰","🐻","⭐"
+    const pieces=[
+
+        "🎉",
+        "🎊",
+        "✨",
+        "❤️",
+        "💕",
+        "🎀",
+        "🌸",
+        "🐼",
+        "🧸",
+        "🐰",
+        "🐻",
+        "⭐"
+
     ];
 
-    for(let i=0;i<100;i++){
+
+    for(
+        let i=0;
+        i<100;
+        i++
+    ){
 
         const piece =
-            document.createElement("div");
+        document.createElement("div");
 
-        piece.className = "confetti";
+
+        piece.className =
+        "confetti";
+
 
         piece.innerText =
-            pieces[Math.floor(Math.random()*pieces.length)];
+        pieces[
+            Math.floor(
+                Math.random()*
+                pieces.length
+            )
+        ];
+
 
         piece.style.left =
-            Math.random()*100 + "vw";
+        Math.random()*100+"vw";
+
 
         piece.style.animationDuration =
-            (2 + Math.random()*4) + "s";
+        (2+Math.random()*4)+"s";
+
 
         piece.style.animationDelay =
-            Math.random()*2 + "s";
+        Math.random()*2+"s";
 
-        document.body.appendChild(piece);
+
+        document.body
+        .appendChild(piece);
+
 
         setTimeout(()=>{
+
             piece.remove();
+
         },7000);
 
     }
 
 }
+
+
+/* =====================================================
+   LEGENDARY CONFETTI
+===================================================== */
+
+function createLegendaryConfetti(){
+
+    const things=[
+
+        "🔥",
+        "⚡",
+        "🎉",
+        "🎊",
+        "✨",
+        "❤️",
+        "💕",
+        "🐼",
+        "🧸",
+        "🐰",
+        "🐻",
+        "🦊",
+        "⭐",
+        "🎀"
+
+    ];
+
+
+    for(
+        let i=0;
+        i<180;
+        i++
+    ){
+
+        const item =
+        document.createElement("div");
+
+
+        item.className =
+        "confetti";
+
+
+        item.innerText =
+        things[
+            Math.floor(
+                Math.random()*
+                things.length
+            )
+        ];
+
+
+        item.style.left =
+        Math.random()*100+"vw";
+
+
+        item.style.animationDuration =
+        (1.5+Math.random()*4)+"s";
+
+
+        item.style.animationDelay =
+        Math.random()*1.5+"s";
+
+
+        document.body
+        .appendChild(item);
+
+
+        setTimeout(()=>{
+
+            item.remove();
+
+        },6500);
+
+    }
+
+}
+
+
+/* =====================================================
+   ORIGINAL EPIC MUSIC
+===================================================== */
+
+function startLegendaryMusic(){
+
+    try{
+
+        const AudioContext =
+        window.AudioContext ||
+        window.webkitAudioContext;
+
+
+        const ctx =
+        new AudioContext();
+
+
+        const melody=[
+
+            523.25,
+            659.25,
+            783.99,
+            1046.50,
+
+            880,
+            783.99,
+            659.25,
+
+            783.99,
+            987.77,
+            1174.66,
+
+            1046.50,
+            880,
+            783.99,
+
+            659.25,
+            783.99,
+            1046.50,
+            1318.51
+
+        ];
+
+
+        melody.forEach(
+        (frequency,index)=>{
+
+
+            const oscillator =
+            ctx.createOscillator();
+
+
+            const gain =
+            ctx.createGain();
+
+
+            oscillator.type =
+            "triangle";
+
+
+            oscillator.frequency.value =
+            frequency;
+
+
+            const startTime =
+            ctx.currentTime +
+            index*.22;
+
+
+            gain.gain.setValueAtTime(
+                0,
+                startTime
+            );
+
+
+            gain.gain.linearRampToValueAtTime(
+                .12,
+                startTime+.03
+            );
+
+
+            gain.gain.linearRampToValueAtTime(
+                0,
+                startTime+.20
+            );
+
+
+            oscillator.connect(gain);
+
+
+            gain.connect(
+                ctx.destination
+            );
+
+
+            oscillator.start(
+                startTime
+            );
+
+
+            oscillator.stop(
+                startTime+.22
+            );
+
+        });
+
+    }
+
+    catch(error){
+
+        console.log(
+            "Music unavailable."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   RESIZE FIX
+===================================================== */
+
+window.addEventListener(
+"resize",
+()=>{
+
+    if(
+        !document
+        .getElementById("questions")
+        .classList
+        .contains("hidden")
+    ){
+
+        moveQuestionButtons();
+
+    }
+
+});
 
 </script>
 
